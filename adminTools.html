@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Reflexis - Admin Tools</title>
+
+<link rel="stylesheet" type="text/css" href="css/adminTools.css" />
+<link rel="stylesheet" type="text/css" href="css/newProject.css" />
+<link rel="stylesheet" type="text/css" href="css/calendar.css">
+
+<script language="JavaScript" src="scripts/calendar/calendar_us.js"></script>
+
+</head>
+
+<body>
+
+<div id="AdminTools" class="wrapper">
+	
+    <div id="bodyContent">
+		<div id="delegateUserContainer">
+        	<div class="upper">DELEGATE USER</div>
+            <div class="lower">
+            	<div class="largeButtonBG">NEW DELEGATION</div>
+            </div>
+        </div>
+        <div id="dutyManagerContainer">
+        	<div class="upper">DUTY MANAGER</div>
+            <div class="lower">
+            	<div class="largeButtonBG">ASSIGN DUTY</div>
+            </div>
+        </div>
+        <div id="newProjectContainer">
+        	<div class="upper">NEW PROJECT</div>
+            <div class="lower">
+            	<div class="largeButtonBG">CREATE NEW PROJECT</div>
+            </div>
+        </div>
+    </div>
+      
+    <div id="footer">&copy; Copyright Reflexis</div>
+</div>
+
+<!-- NEW PROJECT -->
+
+<div id="NewProject" class="np_wrapper np_hideItem">
+	<div id="np_newProjectWindow">
+    	<div class="header">CREATE NEW PROJECT</div><div class="buttonCheckboxClose"></div>
+        <div class="leftColumn">
+        	<div class="projectTitleContainer">
+            	<div class="label">Project Title</div>
+            	<input name="projectTitle" class="projectTitle" value="TRAINING ACTION"/>
+            </div>
+            <div class="assignedToContainer">
+                <div class="label">Assigned To</div>
+                <select name="assignedTo" class="assignedTo">
+                    <option value="Assigned To 1">Assigned To 1</option>
+                    <option value="Assigned To 2">Assigned To 2</option>
+                    <option value="Assigned To 3">Assigned To 3</option>
+                    <option value="Assigned To 4">Assigned To 4</option>
+                    <option value="Assigned To 5">Assigned To 5</option>
+                </select>
+            </div>
+            <div class="departmentContainer">
+                <div class="label">Department</div>
+                <select name="department" class="department">
+                    <option value="Department 1">Department 1</option>
+                    <option value="Department 2">Department 2</option>
+                    <option value="Department 3">Department 3</option>
+                    <option value="Department 4">Department 4</option>
+                    <option value="Department 5">Department 5</option>
+                </select>
+            </div>
+            <div class="priorityContainer">
+            	<div class="label">Priority</div>
+                <div id="np_priorityButtonContainer">
+                    <div id="priorityLowButton" class="buttonLowOff">
+                        LOW
+                    </div>
+                    <div id="priorityMedButton" class="buttonMedOff">
+                        MED
+                    </div>
+                    <div id="priorityHighButton" class="buttonHighOff">
+                        HIGH
+                    </div>
+             	</div>                
+       		</div>
+            <div class="addALinkContainer">
+                <div class="label">Add A Link (URL)</div>
+                <input type="text" name="addALink" class="addALink" />
+			</div>
+            <div class="attachmentsContainer">
+            	<div class="label">Attachments</div>
+                <div class="attachments">
+                	<input type="checkbox"/>New Story Layout Diagram.pdf<br />
+					<input type="checkbox" />Training Manual.pdf<br />
+                    <input type="checkbox" />Attachment Description 1.pdf<br />	
+                    <input type="checkbox" />Attachment Description 2.pdf<br />		
+                </div>
+                <div class="buttonAddAttachment">
+                    <img src="images/newProject/paperClipIcon.png" width="16" height="16" alt="" title="" border="0" align="absmiddle" />ADD ATTACHMENT
+                </div>
+            </div>
+            <div class="notesContainer">
+            	<div class="label">Notes</div>
+            	<textarea class="notes"></textarea>
+            </div>
+        </div>
+        <div class="rightColumn">
+        	<div class="label">Start</div>
+        	<form name="startDateForm" style="margin:0; padding:0;">
+                <input type="text" name="startDateInput" style="width:132px; font-size:.95em;" />
+                <script language="JavaScript">
+                new tcal ({
+                    // form name
+                    'formname': 'startDateForm',
+                    // input name
+                    'controlname': 'startDateInput'
+                });
+            
+                </script>
+            </form>
+            <br />
+            <div class="label">End</div>
+        	<form name="endDateForm" style="margin:0; padding:0;">
+                <input type="text" name="endDateInput" style="width:132px; font-size:.95em;" />
+                <script language="JavaScript">
+                new tcal ({
+                    'formname': 'endDateForm',
+                    'controlname': 'endDateInput'
+                });
+            
+                </script>
+            </form>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="buttonCreateNewProject">CREATE NEW PROJECT</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/adminTools.js"></script>
+<script type="text/javascript" src="scripts/newProject.js"></script>
+
+</body>
+</html>

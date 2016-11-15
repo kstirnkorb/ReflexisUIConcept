@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* Project List CSS Document */
+
+html {height:100%;}
+body {font-family:Arial, Helvetica, sans-serif; margin:0; padding:0; background-color:#E2E2E2; font-size:.75em; height:100%;}
+.pw_wrapper {width:1010px; margin:0 auto; background-color:#FFFFFF; overflow:hidden; height:100%; position:relative;}
+#pw_bodyContent {margin-left:0px;}
+#pw_bodyContent .left {width:522px; height:30px; float:left; display:inline; padding-left:210px; padding-top:5px;}
+#pw_bodyContent .right {width:248px; height:35px; text-align:right; float:right; display:inline; padding-right:10px;}
+#pw_bodyContent .center {width:1000px;}
+.pw_hideItem {display:none;}
+.pw_clearboth {clear:both;}
+
+/* Project Tabs */
+#pw_projectTabContainer {width:444px; height:33px; cursor:pointer; overflow:hidden; clear:both; position:absolute; top:51px;}
+#pw_projectTabContainer .tabOff {background:url('../images/projectWeek/headerNavTabs.png') 0 -33px; width:110px; height:33px; cursor:pointer; overflow:hidden; float:left; margin-right:1px; color:#FFFFFF; font-size:.85em; font-weight:bold;}
+#pw_projectTabContainer .tabOn {background:url('../images/projectWeek/headerNavTabs.png') 0 0px; width:110px; height:33px; cursor:pointer; overflow:hidden; float:left; margin-right:1px; color:#2269BA; font-size:.85em; font-weight:bold;}
+
+/* Project View Tabs */
+#pw_projectViewTabContainer {width:248px; height:24px; cursor:pointer; overflow:hidden; clear:both; margin-top:5px;}
+#pw_projectViewTabContainer .buttonListViewOff {background:url('../images/projectWeek/projectViewLeftNavTabs.png') 0 -24px; width:62px; height:24px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#pw_projectViewTabContainer .buttonListViewOn {background:url('../images/projectWeek/projectViewLeftNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#pw_projectViewTabContainer .buttonDayViewOff {background:url('../images/projectWeek/projectViewCenterNavTabs.png') 0 -24px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#pw_projectViewTabContainer .buttonDayViewOn {background:url('../images/projectWeek/projectViewCenterNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#pw_projectViewTabContainer .buttonWeekViewOff {background:url('../images/projectWeek/projectViewCenterNavTabs.png') 0 -24px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#pw_projectViewTabContainer .buttonWeekViewOn {background:url('../images/projectWeek/projectViewCenterNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#pw_projectViewTabContainer .buttonMonthViewOff {background:url('../images/projectWeek/projectViewRightNavTabs.png') 0 -24px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#pw_projectViewTabContainer .buttonMonthViewOn {background:url('../images/projectWeek/projectViewRightNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+
+/* Project Detail */
+#pw_projectViewDetailContainer {width:822px; float:right;}
+#pw_projectViewDetailContainer .cell1 {margin-left:26px; width:110px; float:left; text-align:center;}
+#pw_projectViewDetailContainer .cell2 {width:110px; float:left; text-align:center;}
+#pw_projectViewDetailContainer .cell3 {width:110px; float:left; text-align:center;}
+#pw_projectViewDetailContainer .cell4 {width:110px; float:left; text-align:center;}
+#pw_projectViewDetailContainer .cell5 {width:110px; float:left; text-align:center;}
+#pw_projectViewDetailContainer .cell6 {width:110px; float:left; text-align:center;}
+#pw_projectViewDetailContainer .cell7 {width:110px; float:left; text-align:center;}
+#pw_projectViewDetailTop {margin-left:1px; width:821px; height:16px; background-image:url('../images/projectWeek/projectListDetailTopBar.jpg'); background-repeat:no-repeat; overflow:hidden; font-size:.75em; padding-top:5px;}
+#pw_projectViewDetailBarContainer {width:821px; height:540px; overflow:scroll; overflow-x:hidden; border-right:solid; border-bottom:solid; border-width:1px; background-color:#FFFFFF; border-color:#A0A0A0; position:relative;}
+#pw_projectViewDetailContainer .tallCell0 {margin-left:17px; width:10px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB; overflow:auto;}
+#pw_projectViewDetailContainer .tallCell1 {width:109px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB;}
+#pw_projectViewDetailContainer .tallCell2 {width:109px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB;}
+#pw_projectViewDetailContainer .tallCell3 {width:109px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB;}
+#pw_projectViewDetailContainer .tallCell4 {width:109px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB;}
+#pw_projectViewDetailContainer .tallCell5 {width:109px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB;}
+#pw_projectViewDetailContainer .tallCell6 {width:109px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB;}
+#pw_projectViewDetailContainer .tallCell7 {width:109px; height:100%; float:left; border-right:solid; border-width:1px; border-color:#BCBBBB;}
+#pw_projectViewDetailContainer .currentDay {border-right:solid; border-width:1px; border-color:#FA920C; background-color:#FBE6CA;}
+#pw_projectViewDetailContainer .leftBlue {background-image:url('../images/projectWeek/detailBarBlueLeft.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .centerBlue {background-image:url('../images/projectWeek/detailBarBlueCenter.gif'); min-width:10px; height:17px; float:left; font-size:.90em; color:#000000; padding-top:2px;}
+#pw_projectViewDetailContainer .rightBlue {background-image:url('../images/projectWeek/detailBarBlueRight.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .leftYellow {background-image:url('../images/projectWeek/detailBarYellowLeft.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .centerYellow {background-image:url('../images/projectWeek/detailBarYellowCenter.gif'); min-width:10px; height:17px; float:left; font-size:.90em; color:#000000; padding-top:2px;}
+#pw_projectViewDetailContainer .rightYellow {background-image:url('../images/projectWeek/detailBarYellowRight.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .leftRed {background-image:url('../images/projectWeek/detailBarRedLeft.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .centerRed {background-image:url('../images/projectWeek/detailBarRedCenter.gif'); min-width:10px; height:17px; float:left; font-size:.90em; color:#000000; padding-top:2px;}
+#pw_projectViewDetailContainer .rightRed {background-image:url('../images/projectWeek/detailBarRedRight.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .leftWhite {background-image:url('../images/projectWeek/detailBarWhiteLeft.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .centerWhite {background-image:url('../images/projectWeek/detailBarWhiteCenter.gif'); min-width:10px; height:17px; float:left; font-size:.90em; color:#000000; padding-top:2px;}
+#pw_projectViewDetailContainer .rightWhite {background-image:url('../images/projectWeek/detailBarWhiteRight.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .leftUrgent {background-image:url('../images/projectWeek/detailBarUrgentLeft.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .centerUrgent {background-image:url('../images/projectWeek/detailBarUrgentCenter.gif'); min-width:10px; height:17px; float:left; font-size:.90em; color:#FFFFFF; font-weight:bold; padding-top:2px;}
+#pw_projectViewDetailContainer .rightUrgent {background-image:url('../images/projectWeek/detailBarUrgentRight.gif'); background-repeat:no-repeat; overflow:hidden; width:10px; height:19px; float:left;}
+#pw_projectViewDetailContainer .department {color:#787878;}
+#pw_projectViewDetailContainer .detailBar {position:absolute; cursor:pointer;}
+#pw_projectViewDetailContainer .pastEvent {padding-left:110px;}
+#pw_projectViewDetailContainer .blueArrow {background-image:url('../images/projectWeek/blueArrow.gif'); width:9px; height:11px; background-repeat:no-repeat; overflow:hidden;}
+#pw_projectViewDetailContainer .weatherBarContainer {background-image:url('../images/projectWeek/weatherBarImage.png'); width:822px; height:16px; background-repeat:no-repeat; overflow:hidden; position:absolute; top:50px; right:-20px;}
+
+/* Detail Pop Up. */
+#pw_detailPopUp {width:385px; height:225px; background-image:url('../images/projectWeek/detailPopUpBG.png'); background-repeat:no-repeat; overflow:hidden; position:absolute; z-index:10;}
+#pw_detailPopUp .downArrow {position:relative; width:33px; height:19px; background-image:url('../images/projectWeek/detailPopUpDownArrow.png'); background-repeat:no-repeat; overflow:hidden;}
+#pw_detailPopUp .upArrow {position:relative; width:33px; height:19px; background-image:url('../images/projectWeek/detailPopUpTopArrow.png'); background-repeat:no-repeat; overflow:hidden;}
+#pw_detailPopUp .buttonCheckboxClose {background:url('../images/projectWeek/buttonCloseCheckbox.jpg') 0 -14px; width:14px; height:14px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat; position:relative; top:20px; left:360px;}
+#pw_detailPopUp .buttonCheckboxClose:hover {background:url('../images/projectWeek/buttonCloseCheckbox.jpg') 0 0px; width:14px; height:14px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat; position:relative; top:20px; left:360px;}
+#pw_detailPopUp .buttonPopUpDetail {background:url('../images/projectWeek/buttonPopUpDetail.png') 0 -18px; width:74px; height:18px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat; position:absolute; top:22px; left:260px;}
+#pw_detailPopUp .buttonPopUpDetail:hover {background:url('../images/projectWeek/buttonPopUpDetail.png') 0 0px; width:74px; height:18px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat; position:absolute; top:22px; left:260px;}
+#pw_detailPopUp .detailHeader {position:absolute; top:22px; left:20px; font-weight:bold;}
+#pw_detailPopUp .detailBodyContainer {width:376px;}
+#pw_detailPopUp .detailBody {margin-left:20px; margin-top:32px; height:158px; overflow:auto;}
+#pw_detailPopUp .year {font-size:.90em; color:#7A7A7A;}
+#pw_detailPopUp .topRow {width:335px; padding-top:4px; padding-bottom:10px;}
+#pw_detailPopUp .detailUrgent {color:#BD2A2A; font-size:1.00em; font-weight:bold;}
+#pw_detailPopUp .detailActive {color:#000000; font-size:1.00em; font-weight:bold;}
+#pw_detailPopUp .detailDueToday {color:#FA8D00; font-size:1.00em; font-weight:bold;}
+#pw_detailPopUp .detailOverdue {color:#BD2A2A; font-size:1.00em; font-weight:bold;}
+#pw_detailPopUp .detailInProgress {color:#3B6CCF; font-size:1.00em; font-weight:bold;}
+#pw_detailPopUp .detailNotStarted {color:#3B6CCF; font-size:1.00em; font-weight:bold;}
+#pw_detailPopUp .detailComplete {color:#52AB5A; font-size:1.00em; font-weight:bold;}
+#pw_detailPopUp .leftCell {width:160px; float:left; font-size:.80em; font-weight:bold;}
+#pw_detailPopUp .rightCell {width:160px; float:left; font-size:.80em; font-weight:bold;}
+#pw_detailPopUp .leftCell2 {width:160px; float:left; font-size:1.00em; font-weight:bold; padding-bottom:10px;}
+#pw_detailPopUp .rightCell2 {width:160px; float:left; font-size:1.00em; font-weight:bold; padding-bottom:10px;}
+#pw_detailPopUp .divider {background-color:#CCCCCC; height:1px; width:335px; margin-bottom:20px; clear:both;}
+
+/* Week Nav Tab */
+#pw_weekNavTab {position:absolute; top:6px; left:340px; background-image:url('../images/projectWeek/weekTabBG.png'); width:232px; height:22px; padding-left:10px; padding-top:8px;}
+#pw_weekNavTab .buttonLeft {background:url('../images/projectWeek/buttonWeekNavLeft.png') 0 -14px; width:21px; height:14px; overflow:hidden; float:left; cursor:pointer;}
+#pw_weekNavTab .buttonLeft:hover {background:url('../images/projectWeek/buttonWeekNavLeft.png') 0 0px; width:21px; height:14px; overflow:hidden; float:left; cursor:pointer;}
+#pw_weekNavTab .buttonRight {background:url('../images/projectWeek/buttonWeekNavRight.png') 0 -14px; width:21px; height:14px; overflow:hidden; float:left; cursor:pointer;}
+#pw_weekNavTab .buttonRight:hover {background:url('../images/projectWeek/buttonWeekNavRight.png') 0 0px; width:21px; height:14px; overflow:hidden; float:left; cursor:pointer;}
+#pw_weekNavTab .center {width:180px; text-align:center; float:left; color:#2D2D2D;}
+#pw_weekNavTab .year {font-size:.90em; color:#7A7A7A;}
+
+/* Project Key */
+#pw_projectViewKey {clear:both; margin-left:200px; width:384px; height:20px; background-image:url('../images/projectWeek/projectListKey.jpg'); background-repeat:no-repeat; overflow:hidden} 
+
+/* Print Button */
+.pw_buttonPrint {background:url('../images/projectWeek/buttonBG.png') 0 -24px; width:70px; height:24px; cursor:pointer; overflow:hidden; color:#2D2D2D; font-size:.90em; font-weight:bold;}
+.pw_buttonPrint:hover {background-position:0 0px; width:70px; height:24px; cursor:pointer; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold;}

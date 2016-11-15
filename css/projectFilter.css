@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* Project Filter CSS Document */
+
+#projectFilter {width:205px; height:604px; background-image:url('../images/projectFilter/projectFilterBG.png'); background-repeat:no-repeat; position:absolute; top:15px; left:0px; z-index:40}
+#projectFilterButtonContainer {width:179px; cursor:pointer; overflow:hidden; clear:both; margin-top:30px; margin-left:9px;}
+#projectFilterButtonContainer .buttonFilterMyProjectsOff {background:url('../images/projectFilter/filterButtonTop.png') 0 -44px; width:179px; height:17px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyProjectsOver {background:url('../images/projectFilter/filterButtonTop.png') 0 -22px; width:179px; height:17px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyProjectsOn {background:url('../images/projectFilter/filterButtonTop.png') 0 0px; width:179px; height:17px; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyDepartmentProjectsOff {background:url('../images/projectFilter/filterButtonMiddle.png') 0 -42px; width:179px; height:17px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:4px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyDepartmentProjectsOver {background:url('../images/projectFilter/filterButtonMiddle.png') 0 -21px; width:179px; height:17px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:4px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyDepartmentProjectsOn {background:url('../images/projectFilter/filterButtonMiddle.png') 0 0px; width:179px; height:17px; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:4px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyStoreProjectsOff {background:url('../images/projectFilter/filterButtonBottom.png') 0 -42px; width:179px; height:17px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:4px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyStoreProjectsOver {background:url('../images/projectFilter/filterButtonBottom.png') 0 -21px; width:179px; height:17px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:4px; text-align:center;}
+#projectFilterButtonContainer .buttonFilterMyStoreProjectsOn {background:url('../images/projectFilter/filterButtonBottom.png') 0 0px; width:179px; height:17px; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:4px; text-align:center;}
+#projectFilterContainer {width:196px; overflow:hidden; clear:both; margin-top:10px; margin-left:5px;}
+#projectFilterContainer .activeFilterHeader {background:url('../images/projectFilter/filterHeaderBarBG.jpg') 0 -20px; width:188px; height:20px; background-repeat:no-repeat; overflow:hidden; margin-bottom:5px; padding-left:6px;}
+#projectFilterContainer .header {background:url('../images/projectFilter/filterHeaderBarBG.jpg') 0 -20px; width:188px; height:16px; background-repeat:no-repeat; overflow:hidden; font-weight:bold; font-size:.85em; padding-left:6px; padding-top:4px; margin-bottom:5px;}
+#projectFilterContainer .header2 {background:url('../images/projectFilter/filterHeaderBarBG.jpg') 0 -0px; width:188px; height:16px; background-repeat:no-repeat; overflow:hidden; font-weight:bold; font-size:.85em; padding-left:6px; padding-top:4px; margin-bottom:5px;}
+#projectFilterContainer .body {width:173px; margin-left:15px; font-size:.90em; line-height:1.7em;}
+.statusActive {color:#000000;}
+.statusActive a {color:#000000; text-decoration:none;}
+.statusActive a:hover {color:#000000; text-decoration:underline;}
+.statusDueToday {color:#FA8D00;}
+.statusDueToday a {color:#FA8D00; text-decoration:none;}
+.statusDueToday a:hover {color:#FA8D00; text-decoration:underline;}
+.statusOverdue {color:#BD2A2A;}
+.statusOverdue a {color:#BD2A2A; text-decoration:none;}
+.statusOverdue a:hover {color:#BD2A2A; text-decoration:underline;}
+.statusInProgress {color:#3B6CCF;}
+.statusInProgress a {color:#3B6CCF; text-decoration:none;}
+.statusInProgress a:hover {color:#3B6CCF; text-decoration:underline;}
+.statusNotStarted {color:#3B6CCF;}
+.statusNotStarted a {color:#3B6CCF; text-decoration:none;}
+.statusNotStarted a:hover {color:#3B6CCF; text-decoration:underline;}
+.statusComplete {color:#52AB5A;}
+.statusComplete a {color:#52AB5A; text-decoration:none;}
+.statusComplete a:hover {color:#52AB5A; text-decoration:underline;}
+.department a {color:#000000; text-decoration:none;}
+.department a:hover {color:#000000; text-decoration:underline;}
+.role a {color:#000000; text-decoration:none;}
+.role a:hover {color:#000000; text-decoration:underline;}
+.type a {color:#000000; text-decoration:none;}
+.type a:hover {color:#000000; text-decoration:underline;}
+[title=ProjectActiveFilters] {display:none;}
+[title=ProjectRole] {display:none;}
+[title=ProjectType] {display:none;}
+.darkGrayCopy {color:#7A7A7A; font-weight:bold; font-size:.85em; padding-top:4px;}
+.buttonClearAllFilters {background:url('../images/projectFilter/buttonFilterClearAll.jpg') 0 -14px; width:58px; height:14px; clear:both; margin-right:10px; margin-top:-13px; float:right; overflow:hidden;}
+.buttonClearAllFilters:hover {background:url('../images/projectFilter/buttonFilterClearAll.jpg') 0 0px; width:58px; height:14px; clear:both; margin-right:10px; margin-top:-13px; float:right; overflow:hidden;}
+.buttonCheckboxStatus {background:url('../images/projectFilter/buttonFilterCheckbox.jpg') 0 -14px; width:14px; height:14px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat;}
+.buttonCheckboxStatus:hover {background:url('../images/projectFilter/buttonFilterCheckbox.jpg') 0 0px; width:14px; height:14px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat;}
+.buttonCheckboxDepartment {background:url('../images/projectFilter/buttonFilterCheckbox.jpg') 0 -14px; width:14px; height:14px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat;}
+.buttonCheckboxDepartment:hover {background:url('../images/projectFilter/buttonFilterCheckbox.jpg') 0 0px; width:14px; height:14px; clear:both; cursor:pointer; overflow:hidden; background-repeat:no-repeat;}

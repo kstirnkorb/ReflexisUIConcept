@@ -1,0 +1,97 @@
+@charset "utf-8";
+/* Project List CSS Document */
+
+body {font-family:Arial, Helvetica, sans-serif; margin:0; padding:0; background-color:#E2E2E2; font-size:.75em;}
+.wrapper {width:1010px; height:100%; margin:0 auto; background-color:#FFFFFF; position:relative;}
+#bodyContent {margin-left:0px;}
+#bodyContent .left {width:522px; height:30px; float:left; display:inline; padding-left:210px; padding-top:5px;}
+#bodyContent .right {width:248px; height:35px; text-align:right; float:right; display:inline; padding-right:10px;}
+#bodyContent .center {width:1000px;}
+#footer {clear:both; top:625px; position:absolute; width:1010px; height:15px; font-size:.72em; text-align:center; padding-top:7px; color:#999999;}
+.hideItem {display:none;}
+.clearboth {clear:both;}
+
+/* Project View Tabs */
+#projectViewTabContainer {width:248px; height:24px; cursor:pointer; overflow:hidden; clear:both; margin-top:5px;}
+#projectViewTabContainer .buttonListView {background:url('../images/projectList/projectViewLeftNavTabs.png') 0 -48px; width:62px; height:24px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonListView:hover {background:url('../images/projectList/projectViewLeftNavTabs.png') 0 -24px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonListViewClicked {background:url('../images/projectList/projectViewLeftNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonDayView{background:url('../images/projectList/projectViewCenterNavTabs.png') 0 -48px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonDayView:hover {background:url('../images/projectList/projectViewCenterNavTabs.png') 0 -24px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonDayViewClicked {background:url('../images/projectList/projectViewCenterNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonWeekView {background:url('../images/projectList/projectViewCenterNavTabs.png') 0 -48px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonWeekView:hover {background:url('../images/projectList/projectViewCenterNavTabs.png') 0 -24px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonWeekViewClicked {background:url('../images/projectList/projectViewCenterNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonMonthView {background:url('../images/projectList/projectViewRightNavTabs.png') 0 -48px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonMonthView:hover {background:url('../images/projectList/projectViewRightNavTabs.png') 0 -24px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#projectViewTabContainer .buttonMonthViewClicked {background:url('../images/projectList/projectViewRightNavTabs.png') 0 0px; width:62px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+
+/* Project Detail */
+#projectListViewDetailContainer {width:822px; float:right;}
+#projectListViewDetailContainer .urgent a {color:#FFFFFF; text-decoration:none;}
+#projectListViewDetailContainer .urgent a:hover {color:#FFFFFF; text-decoration:underline;}
+#projectListViewDetailContainer .standard a {color:#000000; text-decoration:none;}
+#projectListViewDetailContainer .standard a:hover {color:#000000; text-decoration:underline;}
+#projectViewDetailTop {margin-left:1px; width:821px; height:16px; background-image:url('../images/projectList/projectListDetailTopBar.jpg'); background-repeat:no-repeat; overflow:hidden; font-size:.75em; padding-top:5px;}
+#projectViewDetailBarContainer {width:821px; height:540px; overflow:scroll; overflow-x:hidden; border-right:solid; border-bottom:solid; border-width:1px; border-color:#A0A0A0; position:relative;}
+#projectViewDetailBar {width:781px; height:42px; float:right;}
+#projectViewDetailBar .leftUrgent {width:781px; height:36px; background:url('../images/projectList/projectListDetailUrgent.gif') 0 -84px; cursor:pointer; z-index:20; position:relative; color:#FFFFFF; padding-top:6px;}
+#projectViewDetailBar .leftUrgent:hover {width:781px; height:36px; background:url('../images/projectList/projectListDetailUrgent.gif') 0 -42px; cursor:pointer; z-index:20; position:relative; color:#FFFFFF; padding-top:6px;}
+#projectViewDetailBar .leftUrgentClicked {width:781px; height:36px; background:url('../images/projectList/projectListDetailUrgent.gif') 0 0px; cursor:pointer; z-index:20; position:relative; color:#FFFFFF; padding-top:6px;}
+#projectViewDetailBar .leftRed {width:781px; height:36px; background:url('../images/projectList/projectListDetailRed.gif') 0 -84px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftRed:hover {width:781px; height:36px; background:url('../images/projectList/projectListDetailRed.gif') 0 -42px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftRedClicked {width:781px; height:36px; background:url('../images/projectList/projectListDetailRed.gif') 0 0px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftBlue {width:781px; height:36px; background:url('../images/projectList/projectListDetailBlue.gif') 0 -84px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftBlue:hover {width:781px; height:36px; background:url('../images/projectList/projectListDetailBlue.gif') 0 -42px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftBlueClicked {width:781px; height:36px; background:url('../images/projectList/projectListDetailBlue.gif') 0 0px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftYellow {width:781px; height:36px; background:url('../images/projectList/projectListDetailYellow.gif') 0 -84px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftYellow:hover {width:781px; height:36px; background:url('../images/projectList/projectListDetailYellow.gif') 0 -42px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBar .leftYellowClicked {width:781px; height:36px; background:url('../images/projectList/projectListDetailYellow.gif') 0 0px; cursor:pointer; z-index:20; position:relative; color:#2D2D2D; padding-top:6px;}
+#projectViewDetailBottom {width:821px; height:21px; background-image:url('../images/projectList/projectListDetailTopBar.jpg'); background-repeat:no-repeat; overflow:hidden;}
+#projectViewDetailBar .detail {width:781px; padding-left:25px; float:left;}
+#projectViewDetailBar .projectCell {cursor:pointer; padding-left:7px; width:348px; text-align:left; float:left; height:31px; font-weight:bold; font-size:1.00em;}
+#projectViewDetailBar .secondLine {font-size:.80em;}
+#projectViewDetailBar .typeCell {cursor:pointer; width:92px; text-align:center; float:left; height:31px; font-weight:bold; font-size:.95em; position:relative; top:50%; height:36px; margin-top:-15px; line-height:1.05em;}
+#projectViewDetailBar .statusCell {cursor:pointer; width:116px; text-align:center; float:left; height:31px; font-weight:bold; font-size:.95em; position:relative; top:50%; height:36px; margin-top:-15px; line-height:1.05em;}
+#projectViewDetailBar .priorityCell {cursor:pointer; width:78px; text-align:center; float:left; height:31px; font-weight:bold; font-size:.95em; position:relative; top:50%; height:36px; margin-top:-15px; line-height:1.05em;}
+#projectViewDetailBar .updatedCell {cursor:pointer; width:78px; text-align:center; float:left; height:31px; font-weight:bold; font-size:.95em; position:relative; top:50%; height:36px; margin-top:-15px; line-height:1.05em;}
+#projectViewDetailBar .iconCell1 {cursor:pointer; width:30px; text-align:center; float:left; height:22px; padding-top:6px;}
+#projectViewDetailBar .iconCell2 {cursor:pointer; width:30px; text-align:center; float:left; height:28px; padding-top:0px;}
+#projectViewDetailBar .finalRecordBar {width:781px; height:142px; float:right; background-color:#FFFFFF; z-index:30; position:relative;}
+.overdueCopy {color:#BD2A2A;}
+.dueTodayCopy {color:#FA8D00;}
+.inProgressCopy {color:#3B6CCF;}
+.notStartedCopy {color:#3B6CCF;}
+.completeCopy {color:#52AB5A;}
+
+/* Project Key */
+#projectViewKey {clear:both; margin-left:200px; top:600px; width:384px; height:20px; background-image:url('../images/projectList/projectListKey.jpg'); background-repeat:no-repeat; overflow:hidden; position:absolute;} 
+
+/* More Info */
+.moreInfo {width:720px; height:135px; overflow:hidden; z-index:0; margin-left:50px; display:none; float:right; margin-right:12px;}
+#moreInfoTop {width:720px; height:17px; background-image:url('../images/projectList/moreInfoTopBar.jpg'); background-repeat:no-repeat; overflow:hidden; font-size:.75em; padding-top:3px; color:#7A7A7A;}
+#moreInfoContainer {width:718px; height:104px; overflow:scroll; overflow-x:hidden; border-right:solid; border-left:solid; border-width:1px; border-color:#A0A0A0; position:relative;}
+#moreInfoBottom {width:720px; height:8px; background-image:url('../images/projectList/moreInfoBottomBar.jpg'); background-repeat:no-repeat; overflow:hidden;}
+.moreInfoBar {width:700px; height:34px; float:right; background-color:#FFFFFF; color:#4B4B4B;}
+.moreInfoBarEven {background-color:#EBF2FE;}
+.moreInfoNumberCell {width:25px; text-align:center; float:left; height:23px; font-weight:bold; font-size:1.00em; padding-top:7px;}
+.moreInfoTaskCell {width:322px; padding-left:6px; text-align:left; float:left; height:23px; font-size:.90em; padding-top:8px;}
+.moreInfoDepartmentCell {width:138px; text-align:center; float:left; height:23px; font-size:.90em; font-weight:bold; padding-top:3px;}
+.moreInfoStartCell {width:67px; text-align:center; float:left; height:23px; font-size:.90em; padding-top:3px; line-height:1.10em;}
+.moreInfoDueCell {width:66px; text-align:center; float:left; height:23px; font-size:.90em; padding-top:3px; line-height:1.10em;}
+.moreInfoStatusCell {width:75px; text-align:center; float:left; height:23px; font-size:.90em; font-weight:bold; padding-top:9px;}
+.moreInfoSecondLine {font-size:.80em;}
+
+/* Pagination */
+#paginationContainer {height:30px; position:absolute; left:500px; top:566px; z-index:150;}
+#paginationContainer .left {height:30px; width:8px; background-image:url('../images/projectList/paginationLeftBG.png'); background-repeat:no-repeat; overflow:hidden; float:left;}
+#paginationContainer .center {height:30px; min-width:10px; background-image:url('../images/projectList/paginationCenterBG.png'); background-repeat:repeat-x; overflow:hidden; float:left; padding-top:8px; padding-left:5px; text-align:center;}
+#paginationContainer .right {height:30px; width:8px; background-image:url('../images/projectList/paginationRightBG.png'); background-repeat:no-repeat; overflow:hidden; float:left;}
+.paginationPageCopy {width:30px; height:18px; overflow:hidden; text-align:center; padding-top:1px; margin-right:5px; float:left; color:#3B6CCF;}
+.paginationButtonOff {width:18px; height:18px; overflow:hidden; text-align:center; padding-top:1px; margin-right:5px; float:left; color:#3B6CCF;}
+.paginationButtonOn {background:url('../images/projectList/paginationButtonBG.png') 0 0px; width:18px; height:18px; overflow:hidden; text-align:center; padding-top:1px; margin-right:5px; float:left;}
+#paginationContainer a {text-decoration:none; color:#000000; cursor:pointer;}
+
+/* Print Button */
+.buttonPrint {background:url('../images/projectList/buttonBG.png') 0 -24px; width:70px; height:24px; cursor:pointer; overflow:hidden; color:#2D2D2D; font-size:.90em; font-weight:bold;}
+.buttonPrint:hover {background-position:0 0px; width:70px; height:24px; cursor:pointer; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold;}

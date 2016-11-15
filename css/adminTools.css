@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* Admin Tools CSS Document */
+
+body {font-family:Arial, Helvetica, sans-serif; margin:0; padding:0; background-color:#E2E2E2; font-size:.75em; height:100%;}
+.wrapper {width:1010px; height:100%; margin:0 auto; background-color:#FFFFFF; position:relative;}
+#bodyContent {margin-left:0px; height:1000px; background-color:#FFFFFF;}
+#bodyContent .left {width:522px; height:30px; float:left; display:inline; padding-left:210px; padding-top:5px;}
+#bodyContent .right {width:248px; height:35px; text-align:right; float:right; display:inline; padding-right:10px;}
+#bodyContent .center {width:1000px;}
+#footer {clear:both; top:625px; position:absolute; width:1010px; height:15px; font-size:.72em; text-align:center; padding-top:7px; color:#999999;}
+.hideItem {display:none;}
+
+#delegateUserContainer {width:33%; float:left;} 
+#delegateUserContainer .upper {height:10px; padding-top:30px; padding-left:10px; font-weight:bold; font-size:1.35em;}
+#delegateUserContainer .lower {height:550px; border-right:solid; border-width:1px; border-color:#E3E2E2; margin-top:10px; padding-left:20px; padding-top:15px;}
+#dutyManagerContainer {width:33%; float:left;}
+#dutyManagerContainer .upper {height:10px; padding-top:30px; padding-left:10px; font-weight:bold; font-size:1.35em;}
+#dutyManagerContainer .lower {height:550px; border-right:solid; border-width:1px; border-color:#E3E2E2; margin-top:10px; padding-left:20px; padding-top:15px;}
+#newProjectContainer {width:33%; float:left;}
+#newProjectContainer .upper {height:10px; padding-top:30px; padding-left:10px; font-weight:bold; font-size:1.35em;}
+#newProjectContainer .lower{height:550px; margin-top:10px; padding-left:20px; padding-top:15px;}
+
+.largeButtonBG {background:url('../images/adminTools/largeButtonBG.png') 0 -29px; width:164px; height:22px; overflow:hidden; float:left; color:#2D2D2D; font-size:1.00em; font-weight:bold; padding-top:7px; text-align:center;}
+.largeButtonBG:hover {background:url('../images/adminTools/largeButtonBg.png') 0 0px; width:164px; height:22px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:1.00em; font-weight:bold; padding-top:7px; text-align:center;}

@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* Project Detail CSS Document */
+
+body {font-family:Arial, Helvetica, sans-serif; margin:0; padding:0; background-color:#E2E2E2; font-size:.75em; height:100%;}
+.np_wrapper {width:1010px; height:1000px; margin:0 auto; background-color:#3E3E3E; overflow:hidden; position:relative; z-index:100;}
+#np_bodyContent {margin-left:0px; margin-top:15px;}
+#np_bodyContent .left {width:522px; height:30px; float:left; display:inline; padding-left:210px; padding-top:5px;}
+#np_bodyContent .right {width:248px; height:35px; text-align:right; float:right; display:inline; padding-right:10px;}
+#np_bodyContent .center {width:1000px;}
+.np_hideItem {display:none;}
+.np_clearboth {clear:both;}
+
+/* New Project Window. */
+#np_newProjectWindow {width:593px; height:408px; background-image:url('../images/newProject/newProjectBG.png'); background-repeat:no-repeat; overflow:hidden; position:relative; top:50px; margin:0 auto;}
+#np_newProjectWindow .buttonCheckboxClose {background:url('../images/newProject/buttonCloseCheckbox.jpg') 0 -14px; width:14px; height:14px; cursor:pointer; overflow:hidden; background-repeat:no-repeat; float:right; margin-right:10px; margin-top:10px;}
+#np_newProjectWindow .buttonCheckboxClose:hover {background:url('../images/newProject/buttonCloseCheckbox.jpg') 0 0px; width:14px; height:14px; cursor:pointer; overflow:hidden; background-repeat:no-repeat; float:right; margin-right:10px; margin-top:10px;}
+#np_newProjectWindow .header {width:550px; margin-left:10px; margin-top:10px; font-weight:bold; font-size:1.25em; float:left;}
+#np_newProjectWindow .leftColumn {width:375px; margin-left:20px; float:left; margin-top:11px;}
+#np_newProjectWindow .rightColumn {width:175px; margin-left:20px; float:left; margin-top:11px;}
+#np_newProjectWindow .label {font-size:.90em; font-weight:bold; color:#000000; padding-bottom:2px; padding-left:2px;}
+#np_newProjectWindow .projectTitleContainer {width:375px; font-size:1.00em; font-weight:bold; padding-bottom:12px;}
+#np_newProjectWindow .projectTitle {width:375px; font-size:1.00em; font-weight:bold;}
+#np_newProjectWindow .assignedToContainer {width:175px; float:left; padding-bottom:12px;}
+#np_newProjectWindow .assignedTo {width:180px; font-size:.95em;}
+#np_newProjectWindow .departmentContainer {width:175px; float:left; margin-left:25px; padding-bottom:12px;}
+#np_newProjectWindow .department {width:180px; font-size:.95em;}
+#np_newProjectWindow .priorityContainer {width:180px; float:left; padding-bottom:12px; margin-right:20px;}
+#np_newProjectWindow .addALinkContainer {width:175px; float:left; padding-bottom:12px;}
+#np_newProjectWindow .addALink {width:175px; font-size:.95em;}
+#np_newProjectWindow .attachmentsContainer {width:380px; float:left; padding-bottom:12px;}
+#np_newProjectWindow .attachments {float:left; width:215px; height:45px; overflow:scroll; overflow-x:hidden; border:solid; border-width:1px; border-color:#CCCCCC; font-size:.90em; padding-left:2px; margin-right:10px;}
+#np_newProjectWindow .buttonAddAttachment {width:150px; height:20px; background-image:url('../images/projectDetail/buttonAddAttachmentBG.png'); background-repeat:no-repeat; overflow:hidden; font-size:.85em; font-weight:bold; color:#333333; padding-top:3px; margin-bottom:5px; cursor:pointer; text-align:center;}
+#np_newProjectWindow .notesContainer {width:375px; font-size:1.00em; padding-bottom:12px; clear:both;}
+#np_newProjectWindow .notes {width:375px; height:100px; border:solid; border-width:1px; border-color:#CCCCCC; font-family:Arial, Helvetica, sans-serif; padding:5px;}
+#np_newProjectWindow .buttonCreateNewProject {width:160px; height:52px; background-image:url('../images/newProject/buttonCreateNewProjectBG.png'); background-repeat:no-repeat; overflow:hidden; font-size:.90em; font-weight:bold; color:#333333; padding-top:20px; cursor:pointer; text-align:center;}
+
+/* Priority Buttons. */
+#np_priorityButtonContainer {width:180px; height:24px; cursor:pointer; overflow:hidden; clear:both;}
+#np_priorityButtonContainer .buttonLowOff {background:url('../images/newProject/buttonLeftBG.png') 0 -24px; width:60px; height:24px; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#np_priorityButtonContainer .buttonLowOn {background:url('../images/newProject/buttonLeftBG.png') 0 0px; width:60px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#np_priorityButtonContainer .buttonMedOff {background:url('../images/newProject/buttonCenterBG.png') 0 -24px; width:60px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#np_priorityButtonContainer .buttonMedOn {background:url('../images/newProject/buttonCenterBG.png') 0 0px; width:60px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold;padding-top:5px; text-align:center;}
+#np_priorityButtonContainer .buttonHighOff {background:url('../images/newProject/buttonRightBG.png') 0 -24px; width:60px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+#np_priorityButtonContainer .buttonHighOn {background:url('../images/newProject/buttonRightBG.png') 0 0px; width:60px; height:24px; cursor:pointer; overflow:hidden; float:left; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center;}
+
+/* Print Button */
+.np_buttonPrint {background:url('../images/projectDetail/buttonPrintBG.png') 0 -22px; width:90px; height:22px; cursor:pointer; overflow:hidden; color:#2D2D2D; font-size:.90em; font-weight:bold; position:absolute; top:40px; left:920px;}
+.np_buttonPrint:hover {background-position:0 0px; width:90px; height:22px; cursor:pointer; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold; position:absolute; top:40px; left:920px;}
+
+/* View Button */
+.np_buttonViewOff {background:url('../images/projectDetail/buttonBG.png') 0 -48px; width:70px; height:19px; overflow:hidden; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center; cursor:pointer;}
+.np_buttonViewOver {background:url('../images/projectDetail/buttonBG.png') 0 -24px; width:70px; height:19px; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center; cursor:pointer;}
+.np_buttonViewOn {background-image:url('../images/projectDetail/buttonCloseBG.png'); width:70px; height:19px; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center; cursor:pointer; display:none;}
+

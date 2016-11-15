@@ -1,0 +1,1341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Reflexis</title>
+
+<link rel="stylesheet" type="text/css" href="css/projectList.css" />
+<link rel="stylesheet" type="text/css" href="css/projectDetail.css" />
+<link rel="stylesheet" type="text/css" href="css/projectWeek.css" />
+<link rel="stylesheet" type="text/css" href="css/projectMonth.css" />
+<link rel="stylesheet" type="text/css" href="css/projectFilter.css" />
+
+<script type="text/javascript">
+<!--
+var heightChecked = false;
+
+function checkHeightOfContainer() {
+	if (heightChecked == false) {
+		var p = $('#pw_projectViewDetailBarContainer').find('.detailBar:last');
+		var position = p.position();
+		
+		if (position.top > 525) {
+			$('.tallCell0, .tallCell1, .tallCell2, .tallCell3, .tallCell4, .tallCell5, .tallCell6, .tallCell7').css('height','125%');			
+		} else if (position.top > 600) {
+			$('.tallCell0, .tallCell1, .tallCell2, .tallCell3, .tallCell4, .tallCell5, .tallCell6, .tallCell7').css('height','150%');			
+		}
+		heightChecked = true;
+	}	
+}
+
+function resetHeightChecker() {
+	heightChecked = false;
+}
+//-->
+</script>
+
+</head>
+
+<body>
+
+<!-- PROJECT LIST -->
+
+<div id="ProjectList" class="wrapper">
+    <div id="projectFilter">
+    	<div id="projectFilterButtonContainer">
+            <div id="myProjectsButton" class="buttonFilterMyProjectsOff">
+                MY PROJECTS
+            </div>
+            <div id="myDepartmentProjectsButton" class="buttonFilterMyDepartmentProjectsOff">
+                MY DEPARTMENT'S PROJECTS
+            </div>
+            <div id="myStoreProjectsButton" class="buttonFilterMyStoreProjectsOff">
+                MY STORE'S PROJECTS
+            </div>
+        </div>
+        <div id="projectFilterContainer" title="ProjectActiveFilters">
+        	<div class="activeFilterHeader">	
+            	<div class="darkGrayCopy">ACTIVE FILTERS</div>
+                <div id="clearFilters" class="buttonClearAllFilters"></div>
+            </div>    
+            <div class="body">
+            </div>
+        </div>           
+        <div id="projectFilterContainer" title="ProjectStatus">
+        	<div class="header">PROJECT STATUS</div>
+            <div class="body">
+            	<span id="statusItem" class="statusActive" title=""><a href="">All Active (16)</a><br /></span>
+                <span id="statusItem" class="statusOverdue" title=""><a href="">Overdue (2)</a><br /></span>
+                <span id="statusItem" class="statusDueToday" title=""><a href="">Due Today (1)</a><br /></span>
+                <span id="statusItem" class="statusInProgress" title=""><a href="">In Progress (3)</a><br /></span>
+                <span id="statusItem" class="statusNotStarted" title=""><a href="">Not Started (3)</a><br /></span>
+                <span id="statusItem" class="statusComplete" title=""><a href="">Complete (1)</a><br /></span>
+            </div>
+        </div>     
+        <div id="projectFilterContainer" title="ProjectDepartment">
+        	<div class="header">DEPARTMENT</div>
+            <div class="body">
+            	<span id="departmentItem" class="department" title=""><a href="">Electronics (4)</a><br /></span>
+                <span id="departmentItem" class="department" title=""><a href="">Apparel (2)</a><br /></span>
+                <span id="departmentItem" class="department" title=""><a href="">Appliances (2)</a><br /></span>
+                <span id="departmentItem" class="department" title=""><a href="">Housewares (3)</a><br /></span>
+                <span id="departmentItem" class="department" title=""><a href="">Automotive (1)</a><br /></span>
+            </div>
+        </div>
+        <div id="projectFilterContainer" title="ProjectRole">
+        	<div class="header">ROLE</div>
+            <div class="body">
+            	<span class="role" title=""><a href="">Assigned to Me (1)</a><br /></span>
+                <span class="role" title=""><a href="">Manager (1)</a><br /></span>
+                <span class="role" title=""><a href="">Salesperson (1)</a><br /></span>
+                <span class="role" title=""><a href="">Consultant (1)</a><br /></span>
+            </div>
+        </div>
+        <div id="projectFilterContainer" title="ProjectType">
+        	<div class="header">TYPE</div>
+            <div class="body">
+            	<span class="type" title=""><a href="">KPI (4)</a><br /></span>
+                <span class="type" title=""><a href="">Recall (1)</a><br /></span>
+                <span class="type" title=""><a href="">Planogram Reset (2)</a><br /></span>
+                <span class="type" title=""><a href="">Signage Update (3)</a><br /></span>
+                <span class="type" title=""><a href="">Merchandise Reset (1)</a><br /></span>
+                <span class="type" title=""><a href="">Promotion (1)</a><br /></span>
+            </div>
+        </div>                                     
+    </div>
+  
+	<div id="bodyContent">
+    	<div class="left">
+        	<div class="buttonPrint">
+            	<img src="images/projectList/printIcon.png" width="20" height="20" alt="" title="" border="0" align="absmiddle" vspace="2" hspace="5" />PRINT
+            </div>
+        </div>
+    	<div class="right">
+            <div id="projectViewTabContainer">
+                <div id="listViewButton" class="buttonListView" onclick="resetHeightChecker()">
+                    LIST
+                </div>
+                <div id="dayViewButton" class="buttonDayView" onclick="resetHeightChecker()">
+                    DAY
+                </div>
+                <div id="weekViewButton" class="buttonWeekView">
+                    7 DAYS
+                </div>
+                <div id="monthViewButton" class="buttonMonthView" onclick="resetHeightChecker()">
+                    MONTH
+                </div>
+            </div>                
+        </div>
+    	<div class="center">
+        
+        	<!-- PROJECT LIST VIEW CONTAINER -->
+			<div id="projectListViewDetailContainer" style="z-index:110;">
+                <div id="projectViewDetailTop">
+                	<span style="padding-left:55px;"><b>PROJECT</b> / Assigned to</span><span style="padding-left:280px;"><b>TYPE</b></span><span style="padding-left:65px;"><b>STATUS</b> / Due</span><span style="padding-left:45px;"><b>PRIORITY</b></span><span style="padding-left:35px;"><b>UPDATED</b></span>
+                </div>
+                <div id="projectViewDetailBarContainer">
+                    <div id="projectViewDetailBar">
+                    	<div class="detailWrapper">
+                        	<!--
+                        	<div class="leftDetail" style="width:25px; height:42px; position:absolute; left:24px; z-index:110;"></div>
+                        	-->
+                            <div class="detail leftUrgent">
+                            	<div class="projectCell urgent"><a href="" title="">RECALL - PEANUT BUTTER</a><br /><span class="secondLine">Store Manager</span></div>
+                                <div class="typeCell">Recall</div>
+                                <div class="statusCell">DUE TODAY</div>
+                                <div class="priorityCell">URGENT</div>
+                                <div class="updatedCell">SM100<br /><span class="secondLine">01/20 10:45p</span></div>
+                                <div class="iconCell1"><img src="images/projectList/commentIcon2.png" width="17" height="16" alt="" title="" border="0" /></div>
+                            </div>
+                        	<div class="moreInfo">
+                            	<div id="moreInfoTop">
+                                	<span style="padding-left:12px;"><b>#</b></span><span style="padding-left:18px;"><b>TASK</b></span><span style="padding-left:320px;"><b>DEPARTMENT</b> - ROLE</span><span style="padding-left:40px;"><b>START</b></span><span style="padding-left:40px;"><b>DUE</b></span><span style="padding-left:45px;"><b>STATUS</b></span>                                </div>
+                                <div id="moreInfoContainer">
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">04</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">05</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">06</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">07</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">08</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">09</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                </div>
+                                <div id="moreInfoBottom"></div>
+                            </div>
+                        </div>
+                        <div class="detailWrapper">        
+                        	<div class="detail leftRed">
+                            	<div class="projectCell standard"><a href="" title="">TRAINING ACTION</a><br /><span class="secondLine">Store Manager</span></div>
+                                <div class="typeCell">KPI</div>
+                                <div class="statusCell"><span class="overdueCopy">OVERDUE</span><br />Yesterday</div>
+                                <div class="priorityCell">High</div>
+                                <div class="updatedCell">SM100<br /><span class="secondLine">01/20 10:45p</span></div>
+                                <div class="iconCell2"><img src="images/projectList/commentIcon.png" width="17" height="16" alt="" title="" border="0" /><br /><img src="images/projectList/overdueIcon.png" width="18" height="18" alt="" title="" border="0" /></div>
+                            </div>
+                        	<div class="moreInfo">
+                            	<div id="moreInfoTop">
+                                	<span style="padding-left:12px;"><b>#</b></span><span style="padding-left:18px;"><b>TASK</b></span><span style="padding-left:320px;"><b>DEPARTMENT</b> - ROLE</span><span style="padding-left:40px;"><b>START</b></span><span style="padding-left:40px;"><b>DUE</b></span><span style="padding-left:45px;"><b>STATUS</b></span>                                </div>
+                                <div id="moreInfoContainer">
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">04</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">05</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">06</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">07</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">08</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">09</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                </div>
+                                <div id="moreInfoBottom"></div>
+                            </div>
+                        </div>
+                        <div class="detailWrapper">    
+                        	<div class="detail leftYellow">
+                            	<div class="projectCell standard"><a href="" title="">SEASONAL PLANOGRAM RESET</a><br /><span class="secondLine">Store Manager</span></div>
+                                <div class="typeCell">Planogram<br />Reset</div>
+                                <div class="statusCell"><span class="dueTodayCopy">DUE TODAY</span></div>
+                                <div class="priorityCell">High</div>
+                                <div class="updatedCell">SM100<br /><span class="secondLine">01/20 10:45p</span></div>
+                            </div>
+                        	<div class="moreInfo">
+                            	<div id="moreInfoTop">
+                                	<span style="padding-left:12px;"><b>#</b></span><span style="padding-left:18px;"><b>TASK</b></span><span style="padding-left:320px;"><b>DEPARTMENT</b> - ROLE</span><span style="padding-left:40px;"><b>START</b></span><span style="padding-left:40px;"><b>DUE</b></span><span style="padding-left:45px;"><b>STATUS</b></span>                                </div>
+                                <div id="moreInfoContainer">
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">04</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">05</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">06</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">07</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">08</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">09</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                </div>
+                                <div id="moreInfoBottom"></div>
+                            </div>
+                        </div>
+                        <div class="detailWrapper">    
+                        	<div class="detail leftBlue">
+                            	<div class="projectCell standard"><a href="" title="">TMP - SUPERBOWL PROMO SETUP</a><br /><span class="secondLine">Store Manager</span></div>
+                                <div class="typeCell">Promotion</div>
+                                <div class="statusCell"><span class="inProgressCopy">IN PROGRESS<br /></span>Fri 01/15</div>
+                                <div class="priorityCell">Normal</div>
+                                <div class="updatedCell">SM100<br /><span class="secondLine">01/20 10:45p</span></div>
+                            </div>
+                        	<div class="moreInfo">
+                            	<div id="moreInfoTop">
+                                	<span style="padding-left:12px;"><b>#</b></span><span style="padding-left:18px;"><b>TASK</b></span><span style="padding-left:320px;"><b>DEPARTMENT</b> - ROLE</span><span style="padding-left:40px;"><b>START</b></span><span style="padding-left:40px;"><b>DUE</b></span><span style="padding-left:45px;"><b>STATUS</b></span>                                </div>
+                                <div id="moreInfoContainer">
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">04</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">05</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">06</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">07</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">08</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">09</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                </div>
+                                <div id="moreInfoBottom"></div>
+                            </div>
+                        </div>
+                        <div class="detailWrapper">    
+                        	<div class="detail leftBlue">
+                            	<div class="projectCell standard"><a href="" title="">WINTER SEASON SHELVING RESET</a><br /><span class="secondLine">Store Manager</span></div>
+                                <div class="typeCell">Shelving</div>
+                                <div class="statusCell"><span class="inProgressCopy">IN PROGRESS</span><br />Fri 01/15</div>
+                                <div class="priorityCell">Normal</div>
+                                <div class="updatedCell">SM100<br /><span class="secondLine">01/20 10:45p</span></div>
+                            </div>
+                        	<div class="moreInfo">
+                            	<div id="moreInfoTop">
+                                	<span style="padding-left:12px;"><b>#</b></span><span style="padding-left:18px;"><b>TASK</b></span><span style="padding-left:320px;"><b>DEPARTMENT</b> - ROLE</span><span style="padding-left:40px;"><b>START</b></span><span style="padding-left:40px;"><b>DUE</b></span><span style="padding-left:45px;"><b>STATUS</b></span>                                </div>
+                                <div id="moreInfoContainer">
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">04</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">05</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">06</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                	<div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">07</div>
+                                        <div class="moreInfoTaskCell">INSTALL NEW SHELVING</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">08</div>
+                                        <div class="moreInfoTaskCell">SETUP AS PER PLANOGRAM</div>
+                                        <div class="moreInfoDepartmentCell">SALES<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Due Today</div>                                    
+                                    </div>
+                                    <div class="moreInfoBar">
+                                    	<div class="moreInfoNumberCell">09</div>
+                                        <div class="moreInfoTaskCell">SIZE XL STORES - SETUP SPECIAL ENDCAPS</div>
+                                        <div class="moreInfoDepartmentCell">SPECIALTY<br /><span class="moreInfoSecondLine">Department Manager</span></div>
+                                    	<div class="moreInfoStartCell">Sun<br />01/10</div>
+                                        <div class="moreInfoDueCell">Sun<br />01/10</div>
+                                        <div class="moreInfoStatusCell">Overdue</div>                                    
+                                    </div>
+                                </div>
+                                <div id="moreInfoBottom"></div>
+                            </div>
+                            <div class="finalRecordBar"></div>
+                        </div> 
+          			</div>
+          		</div>      
+       	   	</div> 
+            
+            <!-- PROJECT WEEK VIEW CONTAINER -->
+            <div id="projectWeekViewDetailContainer" style="clear:both;" class="pw_hideItem">
+                <div id="pw_weekNavTab">
+                    <div class="buttonLeft"></div>
+                    <div class="center" id="weekRange"></div>
+                    <div class="buttonRight"></div>
+                </div>
+                
+                <div class="pw_clearboth"></div>
+                
+                <div id="pw_projectViewDetailContainer" onclick="checkHeightOfContainer()">
+                    <div id="pw_projectViewDetailTop">
+                        <div class="cell1" id="weekDay1"></div>
+                        <div class="cell2" id="weekDay2"></div> 
+                        <div class="cell3" id="weekDay3"></div> 
+                        <div class="cell4" id="weekDay4"></div> 
+                        <div class="cell5" id="weekDay5"></div> 
+                        <div class="cell6" id="weekDay6"></div> 
+                        <div class="cell7" id="weekDay7"></div>                 	
+                    </div>
+                    <div id="pw_projectViewDetailBarContainer" onmousedown="checkHeightOfContainer()">
+                        
+                        <!-- Detail pop up. -->
+                    	<div id="pw_detailPopUp" class="pw_hideItem">
+                        	<div class="buttonCheckboxClose"></div>
+                        	<div class="buttonPopUpDetail"></div>
+                            <div class="detailHeader"></div>
+                            <div class="detailBodyContainer">
+                                <div class="detailBody">
+                                    <div class="topRow detailDueToday">DUE TODAY</div>
+                                    <div class="leftCell">TYPE</div><div class="rightCell">ASSIGNED TO</div>
+                                    <div class="leftCell2">Planogram Reset</div><div class="rightCell2">Store Manager</div>
+                                    <div class="leftCell">PRIORITY</div><div class="rightCell">UPDATE BY</div>
+                                    <div class="leftCell2">High</div><div class="rightCell2">SM100 1/13</div>
+                                    <div class="divider"></div>
+                                </div>
+                        	</div>
+                            <div id="pointerArrow"></div>	        
+                      	</div>
+                        
+                        <!-- Vertical positions: 80,102,124,146,168,190,212,234,256,278,300,322,344. -->
+                        <!-- Horizontal positions: -80,30,140,250,360,470,580,690. -->
+                        <!-- Widths: 86,196,306,416,526,636,746. -->
+						<!--
+                        One day center bar spans 102 pixels.
+                        The ends are 10 pixels wide each.
+                        Day column width is 110 pixels.
+                        Rows are 22 pixels apart.
+                        Day before x = -80.
+                        Day 1 x = 30.
+                        Day 2 x = 140.
+                        Day 3 x = 250.
+                        Day 4 x = 360.
+                        Day 5 x = 470.
+                        Day 6 x = 580.
+                        Day 7 x = 690.
+                        -->
+                        
+                        <div class="detailBar" style="left:140px; top:2px;">
+                            <div class="leftWhite"></div>
+                            <div class="centerWhite" style="width:196px;">My days off</div>
+                            <div class="rightWhite"></div>
+                        </div>
+                        <div class="detailBar" style="left:470px; top:2px;">
+                            <div class="leftWhite"></div>
+                            <div class="centerWhite" style="width:86px;">Managers wkly...</div>
+                            <div class="rightWhite"></div>
+                        </div>
+                        
+                        <div class="weatherBarContainer"></div>
+                        
+                        <div class="detailBar" style="left:30px; top:80px;">
+                            <div class="leftUrgent"></div>
+                            <div class="centerUrgent" style="width:86px;">RECALL - Pea...</div>
+                            <div class="rightUrgent"></div>
+                        </div>
+                        <div class="detailBar" style="left:250px; top:80px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:306px;">KPI Out of Stock (0%) <span class="department">HOMEGOODS</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:580px; top:80px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:196px;">Training Action (0%) <span class="department">STORE&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:102px;">
+                            <div class="leftRed"></div>
+                            <div class="centerRed pastEvent" style="width:86px;">Training Acti...</div>
+                            <div class="rightRed"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:124px;">
+                            <div class="leftYellow"></div>
+                            <div class="centerYellow pastEvent" style="width:86px;">Seasonal Plan...</div>
+                            <div class="rightYellow"></div>
+                        </div>
+                        <div class="detailBar" style="left:580px; top:102px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:196px;">KPI - Winter tires rack update (0%)...<span class="department">&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:580px; top:124px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:196px;">Another Project #1 (0%) <span class="department">DEPART...&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:580px; top:146px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:196px;">Another Project #2 (0%) <span class="department">DEPART...&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:146px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue pastEvent" style="width:306px;">TMP - Superbowl Promo Setup (25%) <span class="department">STORE</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:168px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue pastEvent" style="width:306px;">Winter Season Shelving Reset (10%) <span class="department">STORE</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:30px; top:190px;">
+                            <div class="leftUrgent"></div>
+                            <div class="centerUrgent" style="width:86px;">RECALL - Pea...</div>
+                            <div class="rightUrgent"></div>
+                        </div>
+                        <div class="detailBar" style="left:250px; top:212px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:306px;">KPI Out of Stock (0%) <span class="department">HOMEGOODS</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:580px; top:234px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:196px;">Training Action (0%) <span class="department">STORE&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:256px;">
+                            <div class="leftRed"></div>
+                            <div class="centerRed pastEvent" style="width:86px;">Training Acti...</div>
+                            <div class="rightRed"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:278px;">
+                            <div class="leftYellow"></div>
+                            <div class="centerYellow pastEvent" style="width:86px;">Seasonal Plan...</div>
+                            <div class="rightYellow"></div>
+                        </div>
+                        <div class="detailBar" style="left:470px; top:300px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:306px;">KPI - Winter tires rack update (0%)...<span class="department">&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:580px; top:322px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:196px;">Another Project #1 (0%) <span class="department">DEPART...&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:690px; top:344px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:86px;">Another Projec...&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:366px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue pastEvent" style="width:306px;">TMP - Superbowl Promo Setup (25%) <span class="department">STORE</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:-80px; top:388px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue pastEvent" style="width:306px;">Winter Season Shelving Reset (10%) <span class="department">STORE</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:250px; top:410px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:416px;">KPI Out of Stock (0%) <span class="department">HOMEGOODS</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:140px; top:432px;">
+                            <div class="leftRed"></div>
+                            <div class="centerRed" style="width:196px;">Training Action...</div>
+                            <div class="rightRed"></div>
+                        </div>
+                        <div class="detailBar" style="left:360px; top:454px;">
+                            <div class="leftYellow"></div>
+                            <div class="centerYellow" style="width:196px;">Seasonal Plan...</div>
+                            <div class="rightYellow"></div>
+                        </div>
+                        <div class="detailBar" style="left:250px; top:476px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:306px;">KPI Out of Stock (0%) <span class="department">HOMEGOODS</span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                        <div class="detailBar" style="left:580px; top:498px;">
+                            <div class="leftBlue"></div>
+                            <div class="centerBlue" style="width:196px;">Training Action (0%) <span class="department">STORE&nbsp;<img align="texttop" src="images/projectWeek/blueBarArrow.gif" width="9" height="12" alt="" title="" border="0" style="float:right; position:absolute; right:5px;"/></span></div>
+                            <div class="rightBlue"></div>
+                        </div>
+                    
+                        <div class="tallCell0"></div>
+                        <div class="tallCell1"></div>
+                        <div class="tallCell2"></div>
+                        <div class="tallCell3"></div>
+                        <div class="tallCell4"></div>
+                        <div class="tallCell5"></div>
+                        <div class="tallCell6"></div>
+                        <div class="tallCell7"></div>
+                    </div>
+                </div>                  
+            </div>
+            
+            <!-- PROJECT MONTH VIEW CONTAINER -->
+            <div id="projectMonthViewDetailContainer" style="clear:both;" class="pm_hideItem">
+                <div id="pm_monthNavTab">
+                    <div class="buttonLeft"></div>
+                    <div class="center" id="monthRange"></div>
+                    <div class="buttonRight"></div>
+                </div>
+                
+              <div class="pm_clearboth"></div>
+                
+                <div id="pm_projectViewDetailContainer">
+                    <div id="pm_projectViewDetailTop">
+                        <div class="cell1"><b>SUN</b></div>
+                        <div class="cell2"><b>MON</b></div>
+                        <div class="cell3"><b>TUE</b></div>
+                        <div class="cell4"><b>WED</b></div>
+                        <div class="cell5"><b>THU</b></div>
+                        <div class="cell6"><b>FRI</b></div>
+                        <div class="cell7"><b>SAT</b></div>                 	
+                    </div>
+                    <div id="pm_projectViewDetailBarContainer">
+                    	<!-- Detail pop up. -->
+                    	<div id="pm_detailPopUp" class="pm_hideItem">
+                        	<div class="buttonCheckboxClose"></div>
+                        	<div class="buttonPopUpDetail"></div>
+                            <div class="detailHeader"></div>
+                            <div class="detailBodyContainer">
+                                <div class="detailBody">
+                                    <div class="topRow detailUrgent">URGENT (1)</div>
+                                    <div class="secondRow">RECALL - Peanut Butter</div>
+                                    <div class="divider"></div>
+                                    <div class="topRow detailOverdue">Overdue (1)</div>
+                                    <div class="secondRow">Training Action</div>
+                                    <div class="divider"></div>
+                                    <div class="topRow detailDueToday">Due Today (1)</div>
+                                    <div class="secondRow">Seasonal Planogram Reset</div>
+                                    <div class="divider"></div>
+                                    <div class="topRow detailInProgress">In Progress (1)</div>
+                                    <div class="secondRow">TMP - Superbowl Promotional Setup</div>
+                                    <div class="divider"></div>
+                                    <div class="topRow detailNotStarted">Not Started (4)</div>
+                                    <div class="secondRow">Pending Tasks 1-4</div>
+                                    <div class="divider"></div>
+                                </div>
+                        	</div>
+                            <div id="pointerArrow"></div>	        
+                      	</div>
+                    	<div style="width:30px; float:left;">&nbsp;</div>
+						<div class="detailCell1" id="day0"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day1"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day2"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day3"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day4"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day5"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day6"><b>&nbsp;</b></div>
+                        <div style="width:30px; float:left;">&nbsp;</div>
+						<div class="detailCell1" id="day7"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day8"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day9"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day10"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day11"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day12"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day13"><b>&nbsp;</b></div>
+                        <div style="width:30px; float:left;">&nbsp;</div>
+						<div class="detailCell1" id="day14"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day15"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day16"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day17"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day18"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day19"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day20"><b>&nbsp;</b></div>
+                        <div style="width:30px; float:left;">&nbsp;</div>
+						<div class="detailCell1" id="day21"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day22"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day23"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day24"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day25"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day26"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day27"><b>&nbsp;</b></div>
+                        <div style="width:30px; float:left;">&nbsp;</div>
+						<div class="detailCell1" id="day28"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day29"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day30"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day31"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day32"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day33"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day34"><b>&nbsp;</b></div>
+                        <div style="width:30px; float:left;">&nbsp;</div>
+						<div class="detailCell1" id="day35"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day36"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day37"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day38"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day39"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day40"><b>&nbsp;</b></div>
+                        <div class="detailCell1" id="day41"><b>&nbsp;</b></div>
+                    </div>
+                </div>                
+            </div>
+                               
+        </div>
+    </div>
+    
+    <div id="paginationContainer">
+       	<div class="left"></div>
+       	<div class="center">
+        	<div class="paginationPageCopy">PAGE</div>
+       		<div class="paginationButtonOff">1</div>
+            <a href="" class="pageTo"><div class="paginationButtonOn">2</div></a>
+            <a href="" class="pageTo"><div class="paginationButtonOn">3</div></a>
+            <a href="" class="pageTo"><div class="paginationButtonOn">4</div></a>
+        </div>
+       	<div class="right"></div>
+    </div>
+    
+    <div id="projectViewKey"></div>
+    
+  	<div id="footer">&copy; Copyright Reflexis</div>
+</div>
+
+<!-- PROJECT DETAIL -->
+
+<div id="ProjectDetail" class="pd_wrapper pd_hideItem">
+  
+  	<div id="pd_backTitle">
+    	<a href="">&lt;&lt; BACK</a>
+    </div>
+  
+	<div id="pd_bodyContent">
+    	<div class="center">
+		
+			<div id="pd_topDetailBarYellow">
+            	<div class="pd_topBarCell1">
+                	<input id="pd_detailCheckbox" type="checkbox" />
+                </div>
+                <div class="pd_topBarCell2">
+                	<span class="pd_topBarLargeCopy">SEASONAL PLANOGRAM RESET</span><br />
+                    <span class="pd_topBarStandardCopy">Store Manager</span>
+                </div>  
+                <div class="pd_topBarCell3">
+                	<span class="pd_topBarHeadingCopy">TYPE</span><br />
+                    <span class="pd_topBarStandardCopy">Planogram Reset</span>
+                </div>
+                <div class="pd_topBarCell4">
+                	<span class="pd_topBarHeadingCopy">STATUS</span><br />
+                    <span class="pd_topBarLargeCopy pd_statusDueToday">DUE TODAY</span>
+                </div>
+                <div class="pd_topBarCell5">
+                	<span class="pd_topBarHeadingCopy">PRIORITY</span><br />
+                    <span class="pd_topBarStandardCopy">HIGH</span>
+                </div>
+                <div class="pd_topBarCell6">
+                	<span class="pd_topBarHeadingCopy">UPDATED</span><br />
+                    <span class="pd_topBarStandardCopy">SM100<br />01/20 10:45a</span>
+                </div>
+                <div class="pd_topBarCell7">
+                	<input id="pd_completeCheckbox" type="checkbox" checked="checked" />Show Completed Tasks
+                </div>                                                              
+            	<div class="pd_buttonPrint">
+                	<img src="images/projectDetail/printIcon.png" width="20" height="20" alt="" title="" border="0" align="absmiddle" vspace="2" hspace="5" />PRINT
+                </div>
+            </div>
+
+            <div id="pd_topNav">
+            	<div id="pd_topNavButtonContainer" title="DetailComments">
+                	<div class="leftBG1"></div>
+                    <div class="rightBG"><span class="label">COMMENTS</span> <span class="qty">(2 new)</span></div>
+                    <div id="pd_topNavOverlay" style="left:0px;">
+                    	<div id="pd_topNavOverlayBody">
+                        	<div class="number">01</div>
+                            <div class="fromTo">FROM: Norwood D1S100&nbsp;&nbsp;&nbsp;TO: District - New England</div>
+							<div class="description"><b>Product Related</b> - The shelving I received is just like the shelving I already have. Should the store proceed with reset and new shelving?</div>
+							<br />
+                            <div class="number">02</div>
+                            <div class="fromTo">FROM: District - New England&nbsp;&nbsp;&nbsp;TO: Norwood D1S100</div>
+                            <div class="description"><b>Product Related</b> - Yes, proceed.</div>
+                            <br /><br />
+                            <div id="newComment">
+                            	<div class="header">NEW COMMENT</div>
+                            	<div class="subject">
+                                	<div class="label">Subject</div>
+                                	<select name="subject" class="pullDown">
+                                		<option value="Subject Title 1">Subject Title 1</option>
+                                        <option value="Subject Title 2">Subject Title 2</option>
+                                        <option value="Subject Title 3">Subject Title 3</option>
+                                        <option value="Subject Title 4">Subject Title 4</option>
+                                        <option value="Subject Title 5">Subject Title 5</option>
+                                        <option value="Subject Title 6">Subject Title 6</option>
+                                        <option value="Subject Title 7">Subject Title 7</option>
+                                        <option value="Subject Title 8">Subject Title 8</option>
+                                        <option value="Subject Title 9">Subject Title 9</option>
+                                        <option value="Subject Title 10">Subject Title 10</option>
+                                    </select>
+                                </div>
+                                <div class="sendTo">
+                                	<div class="label">Send To</div>
+                                	<select name="sendTo" class="pullDown">
+                                		<option value="Send To 1">Send To 1</option>
+                                        <option value="Send To 2">Send To 2</option>
+                                        <option value="Send To 3">Send To 3</option>
+                                        <option value="Send To 4">Send To 4</option>
+                                        <option value="Send To 5">Send To 5</option>
+                                        <option value="Send To 6">Send To 6</option>
+                                        <option value="Send To 7">Send To 7</option>
+                                        <option value="Send To 8">Send To 8</option>
+                                        <option value="Send To 9">Send To 9</option>
+                                        <option value="Send To 10">Send To 10</option>
+                                    </select>
+                                </div>
+                                <div class="commentMessage"><textarea style="width:316px; height:120px;"></textarea></div>
+                                <div class="pd_buttonAddAttachment">
+                                	<img src="images/projectDetail/paperClipIcon.png" width="16" height="16" alt="" title="" border="0" align="absmiddle" />ADD ATTACHMENT
+                              	</div>
+                                <div class="label">
+                                	Add a Link (URL)
+                                </div>
+                               	<input name="addALink" class="pullDown" style="width:235px;" />
+                                <div class="pd_buttonSend" style="position:absolute; clear:both; left:288px; top:352px;">SEND</div>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+            	<div id="pd_topNavButtonContainer" title="DetailAdditionalInfo">
+                	<div class="leftBG2"></div>
+                    <div class="rightBG"><span class="label">ADDITIONAL INFO</span></div>
+                    <div id="pd_topNavOverlay" style="left:157px;">
+                    	<div id="pd_topNavOverlayBody">
+                        	<div class="number">01</div>
+                            <div class="fromTo">FROM: Norwood D1S100&nbsp;&nbsp;&nbsp;TO: District - New England</div>
+							<div class="description"><b>Product Related</b> - The shelving I received is just like the shelving I already have. Should the store proceed with reset and new shelving?</div>
+							<br />
+                            <div class="number">02</div>
+                            <div class="fromTo">FROM: District - New England&nbsp;&nbsp;&nbsp;TO: Norwood D1S100</div>
+                            <div class="description"><b>Product Related</b> - Yes, proceed.</div>
+                            <br /><br />
+                            <div id="newComment">
+                            	<div class="header">NEW COMMENT</div>
+                            	<div class="subject">
+                                	<div class="label">Subject</div>
+                                	<select name="subject" class="pullDown">
+                                		<option value="Subject Title 1">Subject Title 1</option>
+                                        <option value="Subject Title 2">Subject Title 2</option>
+                                        <option value="Subject Title 3">Subject Title 3</option>
+                                        <option value="Subject Title 4">Subject Title 4</option>
+                                        <option value="Subject Title 5">Subject Title 5</option>
+                                        <option value="Subject Title 6">Subject Title 6</option>
+                                        <option value="Subject Title 7">Subject Title 7</option>
+                                        <option value="Subject Title 8">Subject Title 8</option>
+                                        <option value="Subject Title 9">Subject Title 9</option>
+                                        <option value="Subject Title 10">Subject Title 10</option>
+                                    </select>
+                                </div>
+                                <div class="sendTo">
+                                	<div class="label">Send To</div>
+                                	<select name="sendTo" class="pullDown">
+                                		<option value="Send To 1">Send To 1</option>
+                                        <option value="Send To 2">Send To 2</option>
+                                        <option value="Send To 3">Send To 3</option>
+                                        <option value="Send To 4">Send To 4</option>
+                                        <option value="Send To 5">Send To 5</option>
+                                        <option value="Send To 6">Send To 6</option>
+                                        <option value="Send To 7">Send To 7</option>
+                                        <option value="Send To 8">Send To 8</option>
+                                        <option value="Send To 9">Send To 9</option>
+                                        <option value="Send To 10">Send To 10</option>
+                                    </select>
+                                </div>
+                                <div class="commentMessage"><textarea style="width:316px; height:120px;"></textarea></div>
+                                <div class="pd_buttonAddAttachment">
+                                	<img src="images/projectDetail/paperClipIcon.png" width="16" height="16" alt="" title="" border="0" align="absmiddle" />ADD ATTACHMENT
+                              	</div>
+       							<div class="label">
+                                	Add a Link (URL)
+                                </div>
+                               	<input name="addALink" class="pullDown" style="width:235px;" />
+                                <div class="pd_buttonSend" style="position:absolute; clear:both; left:288px; top:352px;">SEND</div>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+            	<div id="pd_topNavButtonContainer" title="DetailProjectAttachments">
+                	<div class="leftBG2"></div>
+                    <div class="rightBG"><span class="label">PROJECT ATTACHMENTS</span></div>
+                    <div id="pd_topNavOverlay" style="left:294px;">
+                    	<div id="pd_topNavOverlayBody">
+                        	<div class="number">01</div>
+                            <div class="fromTo">FROM: Norwood D1S100&nbsp;&nbsp;&nbsp;TO: District - New England</div>
+							<div class="description"><b>Product Related</b> - The shelving I received is just like the shelving I already have. Should the store proceed with reset and new shelving?</div>
+							<br />
+                            <div class="number">02</div>
+                            <div class="fromTo">FROM: District - New England&nbsp;&nbsp;&nbsp;TO: Norwood D1S100</div>
+                            <div class="description"><b>Product Related</b> - Yes, proceed.</div>
+                            <br /><br />
+                            <div id="newComment">
+                            	<div class="header">NEW COMMENT</div>
+                            	<div class="subject">
+                                	<div class="label">Subject</div>
+                                	<select name="subject" class="pullDown">
+                                		<option value="Subject Title 1">Subject Title 1</option>
+                                        <option value="Subject Title 2">Subject Title 2</option>
+                                        <option value="Subject Title 3">Subject Title 3</option>
+                                        <option value="Subject Title 4">Subject Title 4</option>
+                                        <option value="Subject Title 5">Subject Title 5</option>
+                                        <option value="Subject Title 6">Subject Title 6</option>
+                                        <option value="Subject Title 7">Subject Title 7</option>
+                                        <option value="Subject Title 8">Subject Title 8</option>
+                                        <option value="Subject Title 9">Subject Title 9</option>
+                                        <option value="Subject Title 10">Subject Title 10</option>
+                                    </select>
+                                </div>
+                                <div class="sendTo">
+                                	<div class="label">Send To</div>
+                                	<select name="sendTo" class="pullDown">
+                                		<option value="Send To 1">Send To 1</option>
+                                        <option value="Send To 2">Send To 2</option>
+                                        <option value="Send To 3">Send To 3</option>
+                                        <option value="Send To 4">Send To 4</option>
+                                        <option value="Send To 5">Send To 5</option>
+                                        <option value="Send To 6">Send To 6</option>
+                                        <option value="Send To 7">Send To 7</option>
+                                        <option value="Send To 8">Send To 8</option>
+                                        <option value="Send To 9">Send To 9</option>
+                                        <option value="Send To 10">Send To 10</option>
+                                    </select>
+                                </div>
+                                <div class="commentMessage"><textarea style="width:316px; height:120px;"></textarea></div>
+                                <div class="pd_buttonAddAttachment">
+                                	<img src="images/projectDetail/paperClipIcon.png" width="16" height="16" alt="" title="" border="0" align="absmiddle" />ADD ATTACHMENT
+                              	</div>
+                                <div class="label">
+                                	Add a Link (URL)
+                                </div>
+                               	<input name="addALink" class="pullDown" style="width:235px;" />
+                                <div class="pd_buttonSend" style="position:absolute; clear:both; left:288px; top:352px;">SEND</div>
+                            </div>	
+                        </div>
+                    </div>
+                </div>       
+            	<div id="pd_topNavButtonContainer" title="DetailOtherSection1">
+                	<div class="leftBG2"></div>
+                    <div class="rightBG"><span class="label">OTHER SECTION 1</span></div>
+                    <div id="pd_topNavOverlay" style="left:465px;">
+                    	<div id="pd_topNavOverlayBody">
+                        	<div class="number">01</div>
+                            <div class="fromTo">FROM: Norwood D1S100&nbsp;&nbsp;&nbsp;TO: District - New England</div>
+							<div class="description"><b>Product Related</b> - The shelving I received is just like the shelving I already have. Should the store proceed with reset and new shelving?</div>
+							<br />
+                            <div class="number">02</div>
+                            <div class="fromTo">FROM: District - New England&nbsp;&nbsp;&nbsp;TO: Norwood D1S100</div>
+                            <div class="description"><b>Product Related</b> - Yes, proceed.</div>
+                            <br /><br />
+                            <div id="newComment">
+                            	<div class="header">NEW COMMENT</div>
+                            	<div class="subject">
+                                	<div class="label">Subject</div>
+                                	<select name="subject" class="pullDown">
+                                		<option value="Subject Title 1">Subject Title 1</option>
+                                        <option value="Subject Title 2">Subject Title 2</option>
+                                        <option value="Subject Title 3">Subject Title 3</option>
+                                        <option value="Subject Title 4">Subject Title 4</option>
+                                        <option value="Subject Title 5">Subject Title 5</option>
+                                        <option value="Subject Title 6">Subject Title 6</option>
+                                        <option value="Subject Title 7">Subject Title 7</option>
+                                        <option value="Subject Title 8">Subject Title 8</option>
+                                        <option value="Subject Title 9">Subject Title 9</option>
+                                        <option value="Subject Title 10">Subject Title 10</option>
+                                    </select>
+                                </div>
+                                <div class="sendTo">
+                                	<div class="label">Send To</div>
+                                	<select name="sendTo" class="pullDown">
+                                		<option value="Send To 1">Send To 1</option>
+                                        <option value="Send To 2">Send To 2</option>
+                                        <option value="Send To 3">Send To 3</option>
+                                        <option value="Send To 4">Send To 4</option>
+                                        <option value="Send To 5">Send To 5</option>
+                                        <option value="Send To 6">Send To 6</option>
+                                        <option value="Send To 7">Send To 7</option>
+                                        <option value="Send To 8">Send To 8</option>
+                                        <option value="Send To 9">Send To 9</option>
+                                        <option value="Send To 10">Send To 10</option>
+                                    </select>
+                                </div>
+                                <div class="commentMessage"><textarea style="width:316px; height:120px;"></textarea></div>
+                                <div class="pd_buttonAddAttachment">
+                                	<img src="images/projectDetail/paperClipIcon.png" width="16" height="16" alt="" title="" border="0" align="absmiddle" />ADD ATTACHMENT
+                              	</div>
+                                <div class="label">
+                                	Add a Link (URL)
+                                </div>
+                               	<input name="addALink" class="pullDown" style="width:235px;" />
+                                <div class="pd_buttonSend" style="position:absolute; clear:both; left:288px; top:352px;">SEND</div>
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="end"></div>
+                </div>                                                           
+            </div>
+
+            <div id="pd_topSubNav">
+                <span style="padding-left:12px;"><b>#</b></span><span style="padding-left:18px;"><b>TASK</b></span><span style="padding-left:365px;"><b>DEPARTMENT</b> - ROLE</span><span style="padding-left:40px;"><b>UPDATED</b></span><span style="padding-left:35px;"><b>EFFORT</b></span><span style="padding-left:30px;"><b>START</b></span><span style="padding-left:40px;"><b>DUE</b></span><span style="padding-left:50px;"><b>STATUS</b><span style="padding-left:45px;"><img src="images/projectDetail/paperClipIcon.png" width="16" height="16" alt="" title="" border="0" align="absmiddle" /><b>& NOTES</b></span>            </div>
+            <div id="pd_detailContainer">
+                <div class="pd_detailRow taskComplete">
+                    <div class="pd_detailNumberCell">01</div>
+                    <div class="pd_detailTaskCell">REVIEW RESET PLANS WITH DEPARTMENT MANAGERS AND STORE ASSOCIATES</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusComplete">COMPLETE</div>
+                    <div class="pd_detailNotesCell">
+                    	<div class="pd_buttonViewOff">
+                    		VIEW (3)                        </div>
+                        <div class="pd_buttonViewOn"></div>
+                    </div>
+                    <!-- Detail info. -->
+                    <div id="pd_detailInfo">
+                        <div class="detailInfoTop"></div>
+                        <div class="detailInfoMiddle">
+                            <div class="cell1">
+                                <div class="pd_buttonDownloadAll">DOWNLOAD ALL ATTACHMENTS</div>
+                                <div class="notes">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales placerat nisl, eget fringilla felis laoreet non. Proin porta interdum euismod. Suspendisse nulla augue, rhoncus sed vestibulum id, lobortis non arcu. Pellentesque tincidunt, est vel iaculis sollicitudin, magna sapien vulputate tellus, eu feugiat risus dolor quis lorem. Aenean adipiscing, neque eget pellentesque tempor, massa eros aliquet neque, sed sodales diam nisi nec ante. Vivamus eu diam massa. Donec eu leo ipsum. Mauris eget ante diam, ac pulvinar metus. Nullam vitae nibh ac ante tincidunt cursus malesuada sit amet nulla. Nulla facilisi.                                </div>
+                            </div>
+                            <div class="cell2">
+                                <div class="title">Remove shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/removeShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>
+                            <div class="cell3">
+                                <div class="title">Install new shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/installShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>    
+                            <div class="cell4">
+                                <div class="title">Planogram 01/04/06 PDF</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/pdfIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>                            
+                        </div>
+                        <div class="detailInfoBottom"></div>
+                    </div>                     
+                </div> 
+                <div class="pd_detailRow taskComplete">
+                    <div class="pd_detailNumberCell">02</div>
+                    <div class="pd_detailTaskCell">RECEIVE NEW SHELVES AND GOODS</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusComplete">COMPLETE</div>
+                    <div class="pd_detailNotesCell">
+                    	<div class="pd_buttonViewOff">
+                    		VIEW (1)                        </div>
+                        <div class="pd_buttonViewOn"></div>
+                    </div>
+                    <!-- Detail info. -->
+                    <div id="pd_detailInfo">
+                        <div class="detailInfoTop"></div>
+                        <div class="detailInfoMiddle">
+                            <div class="cell1">
+                                <div class="pd_buttonDownloadAll">DOWNLOAD ALL ATTACHMENTS</div>
+                                <div class="notes">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales placerat nisl, eget fringilla felis laoreet non. Proin porta interdum euismod. Suspendisse nulla augue, rhoncus sed vestibulum id, lobortis non arcu. Pellentesque tincidunt, est vel iaculis sollicitudin, magna sapien vulputate tellus, eu feugiat risus dolor quis lorem. Aenean adipiscing, neque eget pellentesque tempor, massa eros aliquet neque, sed sodales diam nisi nec ante. Vivamus eu diam massa. Donec eu leo ipsum. Mauris eget ante diam, ac pulvinar metus. Nullam vitae nibh ac ante tincidunt cursus malesuada sit amet nulla. Nulla facilisi.                                </div>
+                            </div>
+                            <div class="cell2">
+                                <div class="title">Remove shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/removeShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>                         
+                        </div>
+                        <div class="detailInfoBottom"></div>
+                    </div>                     
+                </div>
+                <div class="pd_detailRow taskComplete">
+                    <div class="pd_detailNumberCell">03</div>
+                    <div class="pd_detailTaskCell">REMOVE OLD PRODUCT AND SHELVES</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusComplete">COMPLETE</div>
+                    <div class="pd_detailNotesCell"></div>
+                </div>
+                <div class="pd_detailRow">
+                    <div class="pd_detailNumberCell">04</div>
+                    <div class="pd_detailTaskCell">INSTALL NEW SHELVING</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusOverdue">OVERDUE</div>
+                    <div class="pd_detailNotesCell">
+                    	<div class="pd_buttonViewOff">
+                    		VIEW (2)                        </div>
+                        <div class="pd_buttonViewOn"></div>
+                    </div>
+                    <!-- Detail info. -->
+                    <div id="pd_detailInfo">
+                        <div class="detailInfoTop"></div>
+                        <div class="detailInfoMiddle">
+                            <div class="cell1">
+                                <div class="pd_buttonDownloadAll">DOWNLOAD ALL ATTACHMENTS</div>
+                                <div class="notes">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales placerat nisl, eget fringilla felis laoreet non. Proin porta interdum euismod. Suspendisse nulla augue, rhoncus sed vestibulum id, lobortis non arcu. Pellentesque tincidunt, est vel iaculis sollicitudin, magna sapien vulputate tellus, eu feugiat risus dolor quis lorem. Aenean adipiscing, neque eget pellentesque tempor, massa eros aliquet neque, sed sodales diam nisi nec ante. Vivamus eu diam massa. Donec eu leo ipsum. Mauris eget ante diam, ac pulvinar metus. Nullam vitae nibh ac ante tincidunt cursus malesuada sit amet nulla. Nulla facilisi.                                </div>
+                            </div>
+                            <div class="cell2">
+                                <div class="title">Remove shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/removeShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>
+                            <div class="cell3">
+                                <div class="title">Install new shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/installShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>                               
+                        </div>
+                        <div class="detailInfoBottom"></div>
+                    </div>                     
+                </div>
+                <div class="pd_detailRow">
+                    <div class="pd_detailNumberCell">05</div>
+                    <div class="pd_detailTaskCell">SET-UP AS PER PLANOGRAM</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusDueToday">DUE TODAY</div>
+                    <div class="pd_detailNotesCell"></div>
+                </div>
+                <div class="pd_detailRow">
+                    <div class="pd_detailNumberCell">06</div>
+                    <div class="pd_detailTaskCell">SIZE XL STORES - SET-UP SPECIAL END CAPS</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusDueToday">DUE TODAY</div>
+                    <div class="pd_detailNotesCell">
+                    	<div class="pd_buttonViewOff">
+                    		VIEW (1)                        </div>
+                        <div class="pd_buttonViewOn"></div>                    
+                    </div>
+                    <!-- Detail info. -->
+                    <div id="pd_detailInfo">
+                        <div class="detailInfoTop"></div>
+                        <div class="detailInfoMiddle">
+                            <div class="cell1">
+                                <div class="pd_buttonDownloadAll">DOWNLOAD ALL ATTACHMENTS</div>
+                                <div class="notes">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales placerat nisl, eget fringilla felis laoreet non. Proin porta interdum euismod. Suspendisse nulla augue, rhoncus sed vestibulum id, lobortis non arcu. Pellentesque tincidunt, est vel iaculis sollicitudin, magna sapien vulputate tellus, eu feugiat risus dolor quis lorem. Aenean adipiscing, neque eget pellentesque tempor, massa eros aliquet neque, sed sodales diam nisi nec ante. Vivamus eu diam massa. Donec eu leo ipsum. Mauris eget ante diam, ac pulvinar metus. Nullam vitae nibh ac ante tincidunt cursus malesuada sit amet nulla. Nulla facilisi.                                </div>
+                            </div>
+                            <div class="cell2">
+                                <div class="title">Remove shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/removeShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>                         
+                        </div>
+                        <div class="detailInfoBottom"></div>
+                    </div>                     
+                </div>
+                <div class="pd_detailRow">
+                    <div class="pd_detailNumberCell">07</div>
+                    <div class="pd_detailTaskCell">PLANOGRAM RESET TASK NUMBER 07</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusInProgress">IN PROGRESS</div>
+                    <div class="pd_detailNotesCell">
+                    	<div class="pd_buttonViewOff">
+                    		VIEW (1)                        </div>
+                        <div class="pd_buttonViewOn"></div>
+                    </div>
+                    <!-- Detail info. -->
+                    <div id="pd_detailInfo">
+                        <div class="detailInfoTop"></div>
+                        <div class="detailInfoMiddle">
+                            <div class="cell1">
+                                <div class="pd_buttonDownloadAll">DOWNLOAD ALL ATTACHMENTS</div>
+                                <div class="notes">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales placerat nisl, eget fringilla felis laoreet non. Proin porta interdum euismod. Suspendisse nulla augue, rhoncus sed vestibulum id, lobortis non arcu. Pellentesque tincidunt, est vel iaculis sollicitudin, magna sapien vulputate tellus, eu feugiat risus dolor quis lorem. Aenean adipiscing, neque eget pellentesque tempor, massa eros aliquet neque, sed sodales diam nisi nec ante. Vivamus eu diam massa. Donec eu leo ipsum. Mauris eget ante diam, ac pulvinar metus. Nullam vitae nibh ac ante tincidunt cursus malesuada sit amet nulla. Nulla facilisi.                                </div>
+                            </div>
+                            <div class="cell2">
+                                <div class="title">Remove shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/removeShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>                        
+                        </div>
+                        <div class="detailInfoBottom"></div>
+                    </div>                     
+                </div>   
+                <div class="pd_detailRow">
+                    <div class="pd_detailNumberCell">08</div>
+                    <div class="pd_detailTaskCell">PLANOGRAM RESET TASK NUMBER 08</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusNotStarted">NOT STARTED</div>
+                    <div class="pd_detailNotesCell"></div>
+                </div>   
+                <div class="pd_detailRow">
+                    <div class="pd_detailNumberCell">09</div>
+                    <div class="pd_detailTaskCell">PLANOGRAM RESET TASK NUMBER 09</div>
+                    <div class="pd_detailDepartmentCell">STORE<br /><span class="pd_detailSecondLine">Store Manager</span></div>
+                    <div class="pd_detailUpdatedCell">SM100<br />01/04 01:40p</div>
+                    <div class="pd_detailEffortCell">2 Hours</div>
+                    <div class="pd_detailStartCell">Mon<br />01/04</div>
+                    <div class="pd_detailDueCell">Wed<br />01/06</div>
+                    <div class="pd_detailStatusCell pd_statusNotStarted">NOT STARTED</div>
+                    <div class="pd_detailNotesCell">
+                    	<div class="pd_buttonViewOff">
+                    		VIEW (1)                        </div>
+                        <div class="pd_buttonViewOn"></div>
+                    </div>
+                    <!-- Detail info. -->
+                    <div id="pd_detailInfo">
+                        <div class="detailInfoTop"></div>
+                        <div class="detailInfoMiddle">
+                            <div class="cell1">
+                                <div class="pd_buttonDownloadAll">DOWNLOAD ALL ATTACHMENTS</div>
+                                <div class="notes">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sodales placerat nisl, eget fringilla felis laoreet non. Proin porta interdum euismod. Suspendisse nulla augue, rhoncus sed vestibulum id, lobortis non arcu. Pellentesque tincidunt, est vel iaculis sollicitudin, magna sapien vulputate tellus, eu feugiat risus dolor quis lorem. Aenean adipiscing, neque eget pellentesque tempor, massa eros aliquet neque, sed sodales diam nisi nec ante. Vivamus eu diam massa. Donec eu leo ipsum. Mauris eget ante diam, ac pulvinar metus. Nullam vitae nibh ac ante tincidunt cursus malesuada sit amet nulla. Nulla facilisi.                                </div>
+                            </div>
+                            <div class="cell2">
+                                <div class="title">Remove shelves as shown</div>
+                                <div class="pd_buttonDownload">DOWNLOAD</div>
+                                <div class="icon">
+                                    <img src="images/projectDetail/removeShelvesIcon.png" width="86" height="86" alt="" title="" border="0" /></div>
+                            </div>                         
+                        </div>
+                        <div class="detailInfoBottom"></div>
+                    </div>                     
+                </div>                                                                                                                                           
+            </div>   
+        </div>        
+    </div>
+</div>
+
+<script type="text/javascript" src="scripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/projectList.js"></script>
+<script type="text/javascript" src="scripts/projectDetail.js"></script>
+<script type="text/javascript" src="scripts/projectWeek.js"></script>
+<script type="text/javascript" src="scripts/projectMonth.js"></script>
+<script type="text/javascript" src="scripts/projectFilter.js"></script>
+
+</body>
+</html>

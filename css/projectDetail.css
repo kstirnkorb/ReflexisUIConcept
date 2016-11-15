@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* Project Detail CSS Document */
+
+body {font-family:Arial, Helvetica, sans-serif; margin:0; padding:0; background-color:#E2E2E2; font-size:.75em; height:100%;}
+.pd_wrapper {width:1010px; height:100%; margin:0 auto; background-color:#3E3E3E; overflow:hidden; position:relative; z-index:100;}
+#pd_bodyContent {margin-left:0px; margin-top:15px;}
+#pd_bodyContent .left {width:522px; height:30px; float:left; display:inline; padding-left:210px; padding-top:5px;}
+#pd_bodyContent .right {width:248px; height:35px; text-align:right; float:right; display:inline; padding-right:10px;}
+#pd_bodyContent .center {width:1000px;}
+.pd_hideItem {display:none;}
+.pd_clearboth {clear:both;}
+
+/* Header */
+#pd_backTitle {padding-top:5px; padding-left:10px; height:20px; color:#7C7C7C; font-weight:bold; font-size:2em; text-decoration:none;}
+#pd_backTitle  a{color:#7C7C7C; text-decoration:none;}
+
+/* Top Detail Bar */
+#pd_topDetailBarYellow {width:1010px; height:54px; background-image:url('../images/projectDetail/topDetailBarYellowBG.jpg'); background-repeat:no-repeat; overflow:hidden; color:#333333;}
+#pd_topDetailBarBlue {width:1010px; height:54px; background-image:url('../images/projectDetail/topDetailBarBlueBG.jpg'); background-repeat:no-repeat; overflow:hidden; color:#333333;}
+#pd_topDetailBarRed {width:1010px; height:54px; background-image:url('../images/projectDetail/topDetailBarRedBG.jpg'); background-repeat:no-repeat; overflow:hidden; color:#333333;}
+.pd_topBarCell1 {width:40px; float:left; text-align:center; padding-top:15px;}
+.pd_topBarCell2 {width:380px; float:left; padding-top:12px;}
+.pd_topBarCell3 {width:90px; float:left; padding-top:10px;}
+.pd_topBarCell4 {width:120px; float:left; padding-top:10px;}
+.pd_topBarCell5 {width:90px; float:left; padding-top:10px;}
+.pd_topBarCell6 {width:75px; float:left; padding-top:10px;}
+.pd_topBarCell7 {width:165px; float:left; padding-top:10px; margin-left:50px; padding-top:30px;}
+.pd_topBarLargeCopy {font-size:1.25em; font-weight:bold; line-height:1em;}
+.pd_topBarHeadingCopy {font-size:1em; font-weight:bold; line-height:1em;}
+.pd_topBarStandardCopy {font-size:1em; line-height:.90em;}
+
+/* Top Nav */
+#pd_topNav {width:1010px; height:39px; background-image:url('../images/projectDetail/topNavBG.jpg'); background-repeat:no-repeat; overflow:hidden;}
+
+/* Top Sub Nav */
+#pd_topSubNav {width:1010px; height:18px; background-image:url('../images/projectDetail/topSubNavBG.jpg'); background-repeat:no-repeat; overflow:hidden; font-size:.75em; padding-top:2px; color:#7A7A7A; margin-top:-9px;}
+
+/* Detail */
+#pd_detailContainer {width:1008px; height:456px; overflow:scroll; overflow-x:hidden; border-right:solid; border-left:solid; border-bottom:solid; border-width:1px; border-color:#BBBBBB; background-color:#FFFFFF; position:relative;}
+.pd_detailRow {width:1010px; min-height:41px; float:left; background-color:#FFFFFF; color:#4B4B4B;}
+.pd_detailRowEven {background-color:#EBF2FE;}
+.pd_detailNumberCell {width:27px; text-align:center; float:left; height:33px; font-weight:bold; font-size:1.00em; padding-top:8px; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailTaskCell {width:367px; padding-left:6px; text-align:left; float:left; height:33px; font-size:.90em; padding-top:8px; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailDepartmentCell {width:130px; text-align:center; float:left; height:33px; font-size:.90em; font-weight:bold; padding-top:8px; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailUpdatedCell {width:89px; text-align:center; float:left; height:33px; font-size:.90em; padding-top:8px; line-height:1.10em; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailEffortCell {width:59px; text-align:center; float:left; height:27px; font-size:.90em; padding-top:14px; line-height:1.10em; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailStartCell {width:65px; text-align:center; float:left; height:33px; font-size:.90em; padding-top:8px; line-height:1.10em; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailDueCell {width:62px; text-align:center; float:left; height:33px; font-size:.90em; padding-top:8px; line-height:1.10em; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailStatusCell {width:95px; text-align:center; float:left; height:27px; font-size:.90em; font-weight:bold; padding-top:14px; border-right:solid; border-width:1px; border-color:#DCDCDC;}
+.pd_detailNotesCell {width:85px; float:left; height:32px; font-size:.90em; font-weight:bold; padding-top:8px; padding-left:7px;}
+.pd_detailSecondLine {font-size:.80em;}
+.pd_statusDueToday {color:#FA8D00;}
+.pd_statusOverdue {color:#BD2A2A;}
+.pd_statusInProgress {color:#3B6CCF;}
+.pd_statusNotStarted {color:#3B6CCF;}
+.pd_statusComplete {color:#52AB5A;}
+.pd_taskComplete {display:none;}
+.pd_detailSecondLine {font-size:.80em;}
+
+/* Print Button */
+.pd_buttonPrint {background:url('../images/projectDetail/buttonPrintBG.png') 0 -22px; width:90px; height:22px; cursor:pointer; overflow:hidden; color:#2D2D2D; font-size:.90em; font-weight:bold; position:absolute; top:40px; left:920px;}
+.pd_buttonPrint:hover {background-position:0 0px; width:90px; height:22px; cursor:pointer; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold; position:absolute; top:40px; left:920px;}
+
+/* View Button */
+.pd_buttonViewOff {background:url('../images/projectDetail/buttonBG.png') 0 -48px; width:70px; height:19px; overflow:hidden; color:#2D2D2D; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center; cursor:pointer;}
+.pd_buttonViewOver {background:url('../images/projectDetail/buttonBG.png') 0 -24px; width:70px; height:19px; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center; cursor:pointer;}
+.pd_buttonViewOn {background-image:url('../images/projectDetail/buttonCloseBG.png'); width:70px; height:19px; overflow:hidden; color:#FFFFFF; font-size:.90em; font-weight:bold; padding-top:5px; text-align:center; cursor:pointer; display:none;}
+
+/* Detail Info */
+#pd_detailInfo {width:1010px; overflow:hidden; float:left; display:none;}
+#pd_detailInfo .detailInfoTop {width:1010px; height:11px; background-image:url('../images/projectDetail/detailInfoTopBG.jpg'); background-repeat:no-repeat; overflow:hidden;}
+#pd_detailInfo .detailInfoMiddle {width:1010px; height:100%; background-image:url('../images/projectDetail/detailInfoMiddleBG.jpg'); background-repeat:no-repeat; overflow:hidden; padding-top:5px;}
+#pd_detailInfo .detailInfoBottom {width:1010px; height:20px; background-image:url('../images/projectDetail/detailInfoBottomBG.jpg'); background-repeat:no-repeat; overflow:hidden;}
+#pd_detailInfo .cell1 {width:295px; margin-left:15px; float:left; margin-right:25px;}
+#pd_detailInfo .cell1 .notes {font-size:.90em; color:#000000; padding-left:5px;}
+#pd_detailInfo .cell2 {width:220px; float:left;}
+#pd_detailInfo .cell2 .title {font-size:.90em; font-weight:bold; color:#000000; margin-bottom:10px;}
+#pd_detailInfo .cell2 .icon {width:100px; padding-left:10px; float:left;}
+#pd_detailInfo .cell3 {width:220px; float:left;}
+#pd_detailInfo .cell3 .title {font-size:.90em; font-weight:bold; color:#000000; margin-bottom:10px;}
+#pd_detailInfo .cell3 .icon {width:100px; padding-left:10px; float:left;}
+#pd_detailInfo .cell4 {width:220px; float:left;}
+#pd_detailInfo .cell4 .title {font-size:.90em; font-weight:bold; color:#000000; margin-bottom:10px;}
+#pd_detailInfo .cell4 .icon {width:100px; padding-left:10px; float:left;}
+
+/* Top Nav Buttons */
+#pd_topNavButtonContainer {height:31px; float:left;}
+#pd_topNavButtonContainer .leftBG1 {width:42px; height:30px; background-image:url('../images/projectDetail/topNavButtonLeftBG1.jpg'); background-repeat:no-repeat; overflow:hidden; float:left; border-top:solid; border-width:1px; border-color:#B9B9B9;}
+#pd_topNavButtonContainer .leftBG2 {width:22px; height:39px; background-image:url('../images/projectDetail/topNavButtonLeftBG2.jpg'); background-repeat:no-repeat; overflow:hidden; float:left; border-top:solid; border-width:1px; border-color:#B9B9B9;}
+#pd_topNavButtonContainer .leftOverBG1 {width:42px; height:39px; background-image:url('../images/projectDetail/topNavButtonLeftOverBG1.jpg'); background-repeat:no-repeat; overflow:hidden; float:left; border-top:solid; border-width:1px; border-color:#B9B9B9; z-index:105; position:relative;}
+#pd_topNavButtonContainer .leftOverBG2 {width:22px; height:39px; background-image:url('../images/projectDetail/topNavButtonLeftOverBG2.jpg'); background-repeat:no-repeat; overflow:hidden; float:left; border-top:solid; border-width:1px; border-color:#B9B9B9; z-index:105; position:relative;}
+#pd_topNavButtonContainer .rightBG {min-width:100px; height:30px; background-image:url('../images/projectDetail/topNavButtonBG.jpg'); background-repeat:repeat-x; overflow:hidden; float:left; border-top:solid; border-width:1px; border-color:#B9B9B9; padding-right:15px; padding-top:7px;}
+#pd_topNavButtonContainer .rightBGOver {min-width:100px; height:39px; background-image:url('../images/projectDetail/topNavButtonBG2.jpg'); background-repeat:repeat-x; overflow:hidden; float:left; border-top:solid; border-width:1px; border-color:#B9B9B9; padding-right:15px; padding-top:7px; z-index:110; position:relative;}
+#pd_topNavButtonContainer .label {font-size:.90em; font-weight:bold; color:#333333; cursor:pointer;}
+#pd_topNavButtonContainer .labelOver {font-size:.90em; font-weight:bold; color:#3B6CCF; cursor:pointer; text-decoration:underline;}
+#pd_topNavButtonContainer .labelOn {font-size:.90em; font-weight:bold; color:#3B6CCF; cursor:pointer; text-decoration:none;}
+#pd_topNavButtonContainer .qty {font-size:.85em; color:#333333;}
+#pd_topNavButtonContainer .end {border-right:solid; border-width:1px; border-color:#B9B9B9; height:30px; float:left;}
+
+/* Top Nav Overlay */
+#pd_topNavOverlay {width:414px; height:435px; background-image:url('../images/projectDetail/overlayBG.png'); background-repeat:no-repeat; overflow:hidden; position:absolute; z-index:120; top:129px; display:none;}
+#pd_topNavOverlayBody {width:382px; height:405px; overflow:scroll; overflow-x:hidden; text-align:left; padding-left:25px; padding-top:20px; position:absolute; z-index:125;}
+#pd_topNavOverlayBody .number {width:10px; font-weight:bold; clear:both; float:left; padding-bottom:5px;}
+#pd_topNavOverlayBody .fromTo {width:325px; float:left; padding-left:10px;}
+#pd_topNavOverlayBody .description {width:325px; clear:both; float:left; padding-left:20px; padding-bottom:15px;}
+#newComment {width:325px; padding-left:10px; clear:both;}
+#newComment .header {font-weight:bold; padding-bottom:5px;}
+#newComment .label {font-size:.90em; font-weight:bold; color:#000000; padding-bottom:2px; padding-left:4px;}
+#newComment .subject {width:157px; float:left;}
+#newComment .sendTo {width:157px; float:left; padding-left:10px; }
+#newComment .pullDown {width:155px; font-size:.95em;}
+#newComment .commentMessage {width:320px; font-size:.95em; padding-top:10px; padding-bottom:10px; clear:both;}
+
+/* Buttons */
+.pd_buttonDownloadAll {width:175px; height:20px; background-image:url('../images/projectDetail/buttonDownloadAllBG.png'); background-repeat:no-repeat; overflow:hidden; font-size:.85em; font-weight:bold; color:#333333; padding-top:4px; padding-left:8px; margin-bottom:5px; cursor:pointer;}
+.pd_buttonDownload {width:75px; height:20px; background-image:url('../images/projectDetail/buttonDownloadBG.png'); background-repeat:no-repeat; overflow:hidden; font-size:.85em; font-weight:bold; color:#333333; padding-top:3px; padding-left:8px; margin-bottom:5px; cursor:pointer; float:left;}
+.pd_buttonAddAttachment {width:150px; height:20px; background-image:url('../images/projectDetail/buttonAddAttachmentBG.png'); background-repeat:no-repeat; overflow:hidden; font-size:.85em; font-weight:bold; color:#333333; padding-top:3px; margin-bottom:5px; cursor:pointer; text-align:center;}
+.pd_buttonSend {width:70px; height:52px; background-image:url('../images/projectDetail/buttonSendBG.png'); background-repeat:no-repeat; overflow:hidden; font-size:.90em; font-weight:bold; color:#333333; padding-top:20px; cursor:pointer; text-align:center;}
+
+
+
